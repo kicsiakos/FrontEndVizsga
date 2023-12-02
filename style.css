@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav-horgonyok li {
+    list-style-type: none;
+    
+    display: inline;
+    color: black;
+    
+}
+
+.nav-horgonyok a {
+    text-decoration: none;
+    color: black;
+    font-family:'chamberi super display regular';
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+
+}
+
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 1rem;
+
+}
+
+.fejlec {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.fejlec p {
+    font-family:'chamberi super display regular';
+}
+
+.fejlec-titulus {  
+    font-size: 3.5rem;
+}
+
+.fejlec-nev {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+header {
+    background-image: url(./img/hatter.jpg);
+    height: 25rem;
+    background-size: cover;
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-flow: column wrap;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.logo {
+    background-image: url(./img/logo2.jpeg);
+    height: 15rem;
+    width: 20rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+.main-content {
+    text-align: center;
+}
+
+.main-content p {
+    font-family:'chamberi super display regular';
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    padding-bottom: 2rem;
+}
