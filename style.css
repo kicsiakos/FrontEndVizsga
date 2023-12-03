@@ -10,7 +10,7 @@
     
 }
 
-.nav-horgonyok a {
+.nav-horgonyok a, .dropdown-button {
     text-decoration: none;
     color: black;
     font-family:'chamberi super display regular';
@@ -22,7 +22,7 @@
 }
 
 .nav-horgonyok a:hover {
-    color: red;
+    color: gray;
     text-decoration: underline;
 }
 
@@ -123,4 +123,24 @@ footer {
     font-family:'chamberi super display regular';
     padding-left: 0.5rem;
     font-weight: 600;
+}
+
+.dropdown-content {
+    font-family:'chamberi super display regular';
+    position: absolute;
+    display: none;
+}
+
+.dropdown-content a {
+    padding-top: 1rem;
+    /* border-bottom: 1px solid gray; */
+    display: block;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
