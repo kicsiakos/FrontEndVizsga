@@ -7,21 +7,23 @@ body {
     background-color: #f8f4ef;
 }
 
+.hely {
+    background-image: url(./img/hatter.jpg);
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 1rem;
+}
+
 .content {
     width: 60%;
     text-align: left;
     font-family:'cormorant garamond';
     margin: 0 auto;
     
-}
-
-h1 {
-    font-size: 6rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-family:'cormorant garamond';
-    font-weight: 200;
-    margin-top: 1.5rem;
 }
 
 .szektor h2 {
@@ -35,19 +37,8 @@ h1 {
 }
 
 .szektor p {
-    /* font-size: 1.5rem; */
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-}
-
-hr {
-    height: 0.3rem;
-    background-color: gray;
-    border-radius: 1rem;
-}
-
-footer {
-    margin-top: 2rem;
 }
 
 .szektor {
@@ -73,34 +64,27 @@ footer {
 h2.hely {
     font-size: 5rem;
     text-align: center;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     font-family:'jonathan signature';
     font-weight: 100;
 }
 
 .korrekcio {
+    width: 60%;
+    height: 10rem;
     font-size: 2rem;
     text-transform: uppercase;
-    font-weight: 300;
     text-align: center;
     letter-spacing: 0.2rem;
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     align-content: center;
-}
-
-.frissites {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.korrekcio {
-    padding-top: 4rem;
-    width: 90%;
     margin: 0 auto;
-    font-weight: 800;
+    font-weight: 600;
+    font-style: italic;
+    border: 1px solid gray;
 }
 
 .esztetika-arlista {
