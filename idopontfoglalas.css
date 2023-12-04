@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cim {
+    background-image: url(./img/hatter.jpg);
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 1rem;
+}
+
+h2.cim {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family:'jonathan signature';
+    font-weight: 100;
+}
+
+body {
+    background-color: #f8f4ef;
+}
+
+.content {
+    width: 60%;
+    text-align: left;
+    font-family:'cormorant garamond';
+    margin: 0 auto;
+    
+}
