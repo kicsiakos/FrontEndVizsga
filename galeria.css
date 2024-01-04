@@ -14,7 +14,7 @@ header {
     align-items: center;
     align-content: center;
     margin-top: 1rem;
-    box-shadow: 10px 10px 50px gray;
+    box-shadow: 5px 5px 20px gray;
 }
 
 .nav-horgonyok li {
@@ -52,8 +52,10 @@ h2.cim {
     font-size: 5rem;
     text-align: center;
     margin-bottom: 2rem;
-    font-family: 'jonathan signature';
-    font-weight: 100;
+    /* font-family: 'jonathan signature'; */
+    font-family: 'Sacramento', cursive;
+    font-weight: 50;
+    font-style: italic;
     /* height: 10rem; */
     padding-top: 1rem;
 }
@@ -207,6 +209,7 @@ img {
     align-items: flex-end;
     border-radius: 50px;
     border: 5px solid rgb(214, 214, 176);
+    transition: 2s;
 }
 
 #kep1-szoveg,
@@ -230,12 +233,94 @@ img {
     font-size: 5rem;
     text-align: center;
     background-color: gray;
-    width: 30rem;
+    border-radius: 0px 0px 50px 50px;
+    width: 100%;
     display: none;
     opacity: 0.7;
     height: 6rem;
 }
 
-/* .content:hover .szemhej p {
-    display: block;
-} */
+#kep1:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep2:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep3:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep4:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep5:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep6:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep7:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep8:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep9:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep10:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep11:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep12:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep13:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep14:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep15:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep16:hover {
+    width: 45rem;
+    height: 50rem;
+}
+
+#kep17:hover {
+    width: 45rem;
+    height: 50rem;
+}

@@ -49,6 +49,8 @@ nav {
 
 .fejlec-titulus {
     font-size: 3.5rem;
+    background-color: rgb(173, 167, 136);
+    box-shadow: 0px 0px 20px 20px rgb(173, 167, 136);
 }
 
 .fejlec-nev {
@@ -66,7 +68,7 @@ header {
     flex-flow: column wrap;
     margin-top: 1rem;
     width: 100%;
-    box-shadow: 10px 10px 50px gray;
+    box-shadow: 5px 5px 20px gray;
 }
 
 main {

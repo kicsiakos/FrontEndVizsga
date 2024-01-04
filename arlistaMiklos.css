@@ -48,7 +48,7 @@ header {
     align-items: center;
     align-content: center;
     margin-top: 1rem;
-    box-shadow: 10px 10px 50px gray;
+    box-shadow: 5px 5px 20px gray;
 }
 
 .hely {
@@ -58,7 +58,6 @@ header {
     align-content: center;
     align-items: center;
     padding-top: 2rem;
-    color: rgb(160, 142, 39);
 }
 
 .hely2 {
@@ -74,8 +73,9 @@ header {
     font-size: 5rem;
     text-align: center;
     margin-bottom: 2rem;
-    font-family: 'jonathan signature';
-    font-weight: 100;
+    font-family: 'Sacramento', cursive;
+    font-weight: 50;
+    font-style: italic;
 }
 
 main {
@@ -125,8 +125,9 @@ h2.hely {
     font-size: 5rem;
     text-align: center;
     margin-bottom: 2rem;
-    font-family: 'jonathan signature';
-    font-weight: 100;
+    font-family: 'Sacramento', cursive;
+    font-weight: 50;
+    font-style: italic;
 }
 
 .korrekcio {
