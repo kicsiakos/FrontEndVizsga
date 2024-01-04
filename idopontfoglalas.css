@@ -1,13 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 .cim {
-    
+
     background-size: cover;
     display: flex;
-   /*  width: 100%; */
+    /*  width: 100%; */
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -24,20 +24,21 @@ header {
     align-items: center;
     align-content: center;
     margin-top: 1rem;
+    box-shadow: 10px 10px 50px gray;
 }
 
 h2.cim {
     font-size: 5rem;
     text-align: center;
     margin-bottom: 2rem;
-    font-family:'jonathan signature';
+    font-family: 'jonathan signature';
     font-weight: 100;
     /* height: 10rem; */
     padding-top: 5rem;
 }
 
 body {
-    background-color: #f8f4ef;
+    background-color: white;
 }
 
 .content {
@@ -48,7 +49,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 main {
@@ -60,11 +61,11 @@ main {
 form {
     display: flex;
     flex-flow: column wrap;
-    width: 100%;
+    width: 70%;
     justify-content: space-evenly;
-    font-size: 2.5rem;
-    font-family:'chamberi super display regular';
-    letter-spacing: 0.5rem;
+    font-size: 2rem;
+    font-family: 'chamberi super display regular';
+    letter-spacing: 0.2rem;
     font-weight: 600;
 }
 
@@ -86,7 +87,11 @@ form {
     align-content: center;
 } */
 
-.vez-nev, .ker-nev, .tel, .email, .megjegyzes {
+.vez-nev,
+.ker-nev,
+.tel,
+.email,
+.megjegyzes {
     display: flex;
     flex-flow: row wrap;
     /*justify-content: center; // mobilos nézet // */
@@ -94,11 +99,12 @@ form {
     align-content: center;
 }
 
-input, textarea {
-    width: 70%;
+input,
+textarea {
+    width: 50%;
     font-size: 1.6rem;
     font-weight: 600;
-    font-family:'chamberi super display regular';
+    font-family: 'chamberi super display regular';
     text-align: center;
     display: flex;
     justify-content: center;
@@ -108,7 +114,7 @@ input, textarea {
 
 button {
     font-size: 2rem;
-    font-family:'chamberi super display regular';
+    font-family: 'chamberi super display regular';
     font-weight: 600;
     height: 3rem;
     display: flex;
@@ -117,16 +123,21 @@ button {
     border-radius: 1rem;
 }
 
+button:hover {
+    background-color: rgb(214, 214, 176);
+}
+
 .nav-horgonyok li {
     list-style-type: none;
     display: inline;
-    
+
 }
 
-.nav-horgonyok a, .dropdown-button {
+.nav-horgonyok a,
+.dropdown-button {
     text-decoration: none;
     color: black;
-    font-family:'chamberi super display regular';
+    font-family: 'chamberi super display regular';
     padding-left: 1rem;
     padding-right: 1rem;
     text-transform: uppercase;
@@ -148,18 +159,22 @@ nav {
 }
 
 .dropdown-content {
-    font-family:'chamberi super display regular';
+    font-family: 'chamberi super display regular';
     position: absolute;
     display: none;
-    background-color: #c5c9ca;
-    border-radius: 1rem;
-    border: 1px solid black;
+    background-color: white;
+    box-shadow: 5px 5px 20px gray;
+    /* border-radius: 1rem; */
+    /* border: 1px solid black; */
+
 }
 
 .dropdown-content a {
     padding-top: 1rem;
+    border-bottom: 1px solid black;
     display: block;
     padding-bottom: 1rem;
+
 }
 
 li.dropdown {
@@ -169,4 +184,3 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
