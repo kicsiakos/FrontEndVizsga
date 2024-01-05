@@ -3,7 +3,6 @@
     padding: 0;
 }
 
-
 .nav-horgonyok li {
     list-style-type: none;
     display: inline;
@@ -49,8 +48,8 @@ nav {
 
 .fejlec-titulus {
     font-size: 3.5rem;
-    background-color: rgb(173, 167, 136);
-    box-shadow: 0px 0px 20px 20px rgb(173, 167, 136);
+    /* background-color: rgb(173, 167, 136);
+    box-shadow: 0px 0px 20px 20px rgb(173, 167, 136); */
 }
 
 .fejlec-nev {
@@ -167,14 +166,64 @@ li.dropdown {
     padding: 2rem;
 }
 
+.hamburger {
+    display: none;
+}
+
 .kapcsolat svg {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-@media only screen and (max-width: 992px) {
-    nav {
+@media only screen and (max-width: 1100px) {
+    .nav-horgonyok {
         display: none;
+        flex-flow: column nowrap;
+        font-size: 3rem;
+        position: absolute;
+        z-index: 1;
+        left: 60px;
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    .nav-horgonyok a {
+        border-bottom: 2px solid rgb(173, 167, 136);
+    }
+
+    .dropdown-content a {
+        padding-top: 0.5rem;
+        border-bottom: 1px solid black;
+        display: inline;
+        padding-bottom: 0.5rem;
+    
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    li.dropdown {
+        display: inline;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 10px;
+        left: 220px;
+    }
+
+    
+
+    .kapcsolat {
+        justify-content: space-evenly;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .fejlec-titulus {
@@ -186,17 +235,30 @@ li.dropdown {
     }
 
     .kapcsolat svg {
-        height: 4.5vw;
+        display: none;
     }
 
     header {
         height: 45vw;
     }
+
+    nav {
+        justify-content: flex-start;
+        padding-left: 1rem;
+    }
 }
 
-@media only screen and (max-width: 768px) {
-    nav {
+@media only screen and (max-width: 872px) {
+    .nav-horgonyok {
         display: none;
+    }
+
+    .kapcsolat {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .fejlec-titulus {
@@ -208,7 +270,7 @@ li.dropdown {
     }
 
     .kapcsolat svg {
-        height: 4.5vw;
+        display: none;
     }
 
     header {
