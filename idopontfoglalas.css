@@ -27,6 +27,11 @@ header {
     box-shadow: 5px 5px 20px gray;
 }
 
+.dropdown:hover .dropdown-button svg {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
 h2.cim {
     font-size: 5rem;
     text-align: center;
@@ -39,7 +44,7 @@ h2.cim {
 }
 
 body {
-    background-color: white;
+    background-color: #f8f4ef;
 }
 
 .content {
@@ -111,6 +116,7 @@ textarea {
     justify-content: center;
     align-items: center;
     align-content: center;
+    box-shadow: 5px 5px 20px gray;
 }
 
 button {

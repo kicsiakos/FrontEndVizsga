@@ -43,28 +43,28 @@
             <h2 class="cim">Időpontfoglalás</h2>
         </header>
         <main>
-            <form action="process_form.php" method="post">
+            <form>
                 <div class="vez-nev">
                         <label for="vezetek-nev">Vezetéknév: </label>
-                        <input type="text" name="vezetek-nev" id="vezetek-nev">
+                        <input type="text" name="vezetek-nev" id="vezetek-nev" required>
                 </div>
                 <div class="ker-nev">
                         <label for="kereszt-nev">Keresztnév: </label>
-                        <input type="text" name="kereszt-nev" id="kereszt-nev">
+                        <input type="text" name="kereszt-nev" id="kereszt-nev" required>
                 </div>
                 <div class="tel">
                     <label for="telefonszam">Telefonszám: </label>
-                    <input type="tel" name="telefon" id="telefon">
+                    <input type="tel" name="telefon" id="telefon" required>
                 </div>
                 <div class="email">
                     <label for="email">E-mail cím: </label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div class="megjegyzes">
                     <label for="megjegyzes">Üzenet: </label>
                     <textarea name="megjegyzes" id="megjegyzes" cols="74" rows="8"></textarea>
                 </div>
-                <button>Foglalás</button>
+                <button onclick="uzenet()">Foglalás</button>
                <!--  <div class="labelek">
                     <div class="vez-nev">
                         <label for="vezetek-nev">Vezetéknév: </label>

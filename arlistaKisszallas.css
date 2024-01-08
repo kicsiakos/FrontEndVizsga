@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: #f8f4ef;
 }
 
 .nav-horgonyok li {
@@ -119,6 +119,12 @@ main {
     align-items: center;
     font-style: italic;
     font-size: 1.6rem;
+    text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-button svg {
+    transform: rotate(180deg);
+    transition: 0.5s;
 }
 
 h2.hely {
