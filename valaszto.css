@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f8f4ef;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 5vw;
+    line-height: 10vw;
+}
+
+main a {
+    text-decoration: none;
+    color: black;
+    font-family: 'chamberi super display regular';
+    font-weight: 700;
+}
+
+main a:hover {
+    transform: scale(1.5);
+    transition: 0.5s;
+}
