@@ -175,7 +175,7 @@ li.dropdown {
     padding-right: 1rem;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1120px) {
     .nav-horgonyok {
         display: none;
         flex-flow: column nowrap;
@@ -216,7 +216,13 @@ li.dropdown {
         left: 220px;
     }
 
-    
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .nav-horgonyok svg {
+        display: none;
+    }
 
     .kapcsolat {
         justify-content: space-evenly;
@@ -267,6 +273,11 @@ li.dropdown {
 
     .fejlec-nev {
         font-size: 7vw;
+        padding-bottom: 4vw;
+    }
+
+    .fejlec {
+        padding-top: 8vw;
     }
 
     .kapcsolat svg {
@@ -275,5 +286,22 @@ li.dropdown {
 
     header {
         height: 45vw;
+    }
+
+    .logo {
+        width: 25vw;
+        height: 20vw;
+    }
+
+    .hamburger svg {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .main-content p {
+        font-family: 'chamberi super display regular';
+        font-size: 3vw;
+        line-height: 1.5rem;
+        padding-bottom: 2re;
     }
 }

@@ -162,6 +162,7 @@ h2.hely {
     background-color: white;
     /* border-radius: 1rem; */
     /* border: 1px solid black; */
+    box-shadow: 5px 5px 20px gray;
 
 }
 
@@ -179,4 +180,139 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media only screen and (max-width: 1120px) {
+    .nav-horgonyok {
+        display: none;
+        flex-flow: column nowrap;
+        font-size: 3rem;
+        position: absolute;
+        z-index: 1;
+        left: 60px;
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    .nav-horgonyok a {
+        border-bottom: 2px solid rgb(173, 167, 136);
+    }
+
+    .dropdown-content a {
+        padding-top: 0.5rem;
+        border-bottom: 1px solid black;
+        display: inline;
+        padding-bottom: 0.5rem;
+    
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    li.dropdown {
+        display: inline;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 10px;
+        left: 220px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .nav-horgonyok svg {
+        display: none;
+    }
+
+    .kapcsolat {
+        justify-content: space-evenly;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .fejlec-titulus {
+        font-size: 6vw;
+    }
+
+    .fejlec-nev {
+        font-size: 7vw;
+    }
+
+    .kapcsolat svg {
+        display: none;
+    }
+
+    header {
+        height: 45vw;
+    }
+
+    nav {
+        justify-content: flex-start;
+        padding-left: 1rem;
+    }
+}
+
+@media only screen and (max-width: 872px) {
+    .nav-horgonyok {
+        display: none;
+    }
+
+    .kapcsolat {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .fejlec-titulus {
+        font-size: 6vw;
+    }
+
+    .fejlec-nev {
+        font-size: 7vw;
+        padding-bottom: 4vw;
+    }
+
+    .fejlec {
+        padding-top: 8vw;
+    }
+
+    .kapcsolat svg {
+        display: none;
+    }
+
+    header {
+        height: 45vw;
+    }
+
+    .logo {
+        width: 25vw;
+        height: 20vw;
+    }
+
+    .hamburger svg {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .main-content p {
+        font-family: 'chamberi super display regular';
+        font-size: 3vw;
+        line-height: 1.5rem;
+        padding-bottom: 2re;
+    }
 }

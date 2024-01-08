@@ -4,15 +4,14 @@
 }
 
 header {
-    width: 100%;
     background-image: url(./img/hatter.jpg);
     background-size: cover;
     display: flex;
     flex-flow: column wrap;
     width: 100%;
-    justify-content: center;
+   /*  justify-content: center;
     align-items: center;
-    align-content: center;
+    align-content: center; */
     margin-top: 1rem;
     box-shadow: 5px 5px 20px gray;
 }
@@ -68,6 +67,7 @@ h2.cim {
     box-shadow: 5px 5px 20px gray;
     /* border-radius: 1rem; */
     /* border: 1px solid black; */
+    box-shadow: 5px 5px 20px gray;
 
 }
 
@@ -99,7 +99,7 @@ body {
     width: 100%;
     justify-content: center;
     align-content: center;
-    margin-top: 1rem;
+   /*  margin-top: 1rem; */
     margin-bottom: 1rem;
 }
 
@@ -201,8 +201,8 @@ img {
 #kep15,
 #kep16,
 #kep17 {
-    width: 30rem;
-    height: 37.5rem;
+    width: 30vw;
+    height: 37.5vw;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -230,17 +230,17 @@ img {
 #kep16-szoveg,
 #kep17-szoveg {
     color: white;
-    font-size: 5rem;
+    font-size: 5vw;
     text-align: center;
     background-color: gray;
     border-radius: 0px 0px 50px 50px;
     width: 100%;
     display: none;
     opacity: 0.7;
-    height: 6rem;
+    height: 10vw;
 }
 
-#kep1:hover {
+/* #kep1:hover {
     width: 45rem;
     height: 50rem;
 }
@@ -323,4 +323,175 @@ img {
 #kep17:hover {
     width: 45rem;
     height: 50rem;
+} */
+
+.hamburger {
+    display: none;
 }
+
+@media only screen and (max-width: 1120px) {
+    .nav-horgonyok {
+        display: none;
+        flex-flow: column nowrap;
+        font-size: 3rem;
+        position: absolute;
+        z-index: 1;
+        left: 60px;
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    .nav-horgonyok a {
+        border-bottom: 2px solid rgb(173, 167, 136);
+    }
+
+    .dropdown-content a {
+        padding-top: 0.5rem;
+        border-bottom: 1px solid black;
+        display: inline;
+        padding-bottom: 0.5rem;
+    
+    }
+
+    h2.cim {
+        margin-bottom: 5vw;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    li.dropdown {
+        display: inline;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 10px;
+        left: 220px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .nav-horgonyok svg {
+        display: none;
+    }
+
+    .kapcsolat {
+        justify-content: space-evenly;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .fejlec-titulus {
+        font-size: 6vw;
+    }
+
+    .fejlec-nev {
+        font-size: 7vw;
+    }
+
+    .kapcsolat svg {
+        display: none;
+    }
+
+    header {
+        height: 30vw;
+    }
+
+    nav {
+        justify-content: flex-start;
+        padding-left: 1rem;
+    }
+
+    h2.cim {
+        font-size: 8vw;
+    }
+}
+
+@media only screen and (max-width: 872px) {
+    .nav-horgonyok {
+        display: none;
+    }
+
+    .kapcsolat {
+        display: none;
+    }
+
+    h2.cim {
+        margin-bottom: 3vw;
+        padding-top: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .fejlec-titulus {
+        font-size: 6vw;
+    }
+
+    .fejlec-nev {
+        font-size: 7vw;
+        padding-bottom: 4vw;
+    }
+
+    .fejlec {
+        padding-top: 8vw;
+    }
+
+    .kapcsolat svg {
+        display: none;
+    }
+
+    header {
+        height: 30vw;
+    }
+
+    .logo {
+        width: 25vw;
+        height: 20vw;
+    }
+
+    .hamburger svg {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .main-content p {
+        font-family: 'chamberi super display regular';
+        font-size: 3vw;
+        line-height: 1.5rem;
+        padding-bottom: 2re;
+    }
+}
+
+@media only screen and (max-width: 872px) {
+    #kep1,
+#kep2,
+#kep3,
+#kep4,
+#kep5,
+#kep6,
+#kep7,
+#kep8,
+#kep9,
+#kep10,
+#kep11,
+#kep12,
+#kep13,
+#kep14,
+#kep15,
+#kep16,
+#kep17 {
+    width: 60vw;
+    height: 75vw;
+}
+} 
