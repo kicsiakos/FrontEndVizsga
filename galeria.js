@@ -134,6 +134,54 @@ function lehuz17() {
     document.getElementById("kep17-szoveg").style.display = "none"
 }
 
+function rahuz18() {
+    document.getElementById("kep18-szoveg").style.display = "block"
+}
+
+function lehuz18() {
+    document.getElementById("kep18-szoveg").style.display = "none"
+}
+
+function rahuz19() {
+    document.getElementById("kep19-szoveg").style.display = "block"
+}
+
+function lehuz19() {
+    document.getElementById("kep19-szoveg").style.display = "none"
+}
+
+function rahuz20() {
+    document.getElementById("kep20-szoveg").style.display = "block"
+}
+
+function lehuz20() {
+    document.getElementById("kep20-szoveg").style.display = "none"
+}
+
+function rahuz21() {
+    document.getElementById("kep21-szoveg").style.display = "block"
+}
+
+function lehuz21() {
+    document.getElementById("kep21-szoveg").style.display = "none"
+}
+
+function rahuz22() {
+    document.getElementById("kep22-szoveg").style.display = "block"
+}
+
+function lehuz22() {
+    document.getElementById("kep22-szoveg").style.display = "none"
+}
+
+function rahuz23() {
+    document.getElementById("kep23-szoveg").style.display = "block"
+}
+
+function lehuz23() {
+    document.getElementById("kep23-szoveg").style.display = "none"
+}
+
 function rahuz() {
     var x = document.getElementsByClassName("nav-horgonyok")[0];
     if (x.style.display === "none") {
