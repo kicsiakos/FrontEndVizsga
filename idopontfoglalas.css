@@ -199,7 +199,7 @@ li.dropdown {
     display: none;
 }
 
-@media only screen and (max-width: 1120px) {
+@media only screen and (max-width: 1150px) {
     .nav-horgonyok {
         display: none;
         flex-flow: column nowrap;

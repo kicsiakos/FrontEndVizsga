@@ -234,15 +234,17 @@ img {
 #kep15-szoveg,
 #kep16-szoveg,
 #kep17-szoveg {
-    color: white;
-    font-size: 5vw;
+    color: yellow;
+    font-size: 2.5vw;
     text-align: center;
     background-color: gray;
     border-radius: 0px 0px 50px 50px;
     width: 100%;
     display: none;
     opacity: 0.7;
-    height: 10vw;
+    height: auto;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 
 /* #kep1:hover {
@@ -334,7 +336,7 @@ img {
     display: none;
 }
 
-@media only screen and (max-width: 1120px) {
+@media only screen and (max-width: 1150px) {
     .nav-horgonyok {
         display: none;
         flex-flow: column nowrap;

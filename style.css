@@ -107,14 +107,22 @@ main {
 }
 
 footer {
-    width: 100%;
     display: flex;
-    height: 6rem;
-    background-color: #c5c9ca;
     flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.footer-szoveg {
+    display: flex;
+    justify-content: center;
     align-content: center;
+    align-items: center;
+    font-family: 'Playfair Display';
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    padding-right: 1rem;
 }
 
 .insta,
@@ -192,7 +200,14 @@ li.dropdown {
     padding-right: 1rem;
 }
 
-@media only screen and (max-width: 1120px) {
+.profil img {
+    width: 18vw;
+    border: 2px solid black;
+    border-radius: 10vw;
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1150px) {
     .nav-horgonyok {
         display: none;
         flex-flow: column nowrap;
@@ -269,6 +284,11 @@ li.dropdown {
         justify-content: flex-start;
         padding-left: 1rem;
     }
+
+    .logo {
+        width: 25vw;
+        height: 20vw;
+    }
 }
 
 @media only screen and (max-width: 872px) {
@@ -320,5 +340,11 @@ li.dropdown {
         font-size: 3vw;
         line-height: 1.5rem;
         padding-bottom: 2re;
+    }
+
+    .footer-szoveg {
+        font-family: 'chamberi super display regular';
+        font-size: 3vw;
+        line-height: 1.5rem;
     }
 }
