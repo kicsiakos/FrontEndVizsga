@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,33 +10,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="content">
         <header>
             <nav>
-                <div class="hamburger" onclick="rahuz()"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg></div>
+                <div class="hamburger" onclick="rahuz()"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                        viewBox="0 0 24 24">
+                        <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
+                    </svg></div>
                 <ul class="nav-horgonyok">
                     <li><a href="index.html">Bemutatkozás</a></li>
-                    <li class="dropdown"><a href="#sminktetovalas" class="dropdown-button">Sminktetoválás  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
-                    <div class="dropdown-content">
-                        <a href="#">Szemöldöktetoválás</a>
-                        <a href="#">Ajaktetoválás</a>
-                        <a href="#">Szemhéjtetoválás</a>
-                    </div>
+                    <li class="dropdown"><a href="#sminktetovalas" class="dropdown-button">Sminktetoválás <svg
+                                xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="#">Szemöldöktetoválás</a>
+                            <a href="#">Ajaktetoválás</a>
+                            <a href="#">Szemhéjtetoválás</a>
+                        </div>
                     </li>
-                    <li class="dropdown"><a href="#esztetika" class="dropdown-button">Esztétika  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
-                    <div class="dropdown-content">
-                        <a href="#">Ajakfeltöltés</a>
-                        <a href="#">Skinbooster</a>
-                        <a href="#">Lokális zsírbontás</a>
-                    </div>
+                    <li class="dropdown"><a href="#esztetika" class="dropdown-button">Esztétika <svg
+                                xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="#">Ajakfeltöltés</a>
+                            <a href="#">Skinbooster</a>
+                            <a href="#">Lokális zsírbontás</a>
+                        </div>
                     </li>
                     <li><a href="galeria.html">Galéria</a></li>
-                    <li class="dropdown"><a href="#arlista" class="dropdown-button">Árlista  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
+                    <li class="dropdown"><a href="#arlista" class="dropdown-button">Árlista <svg
+                                xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+                            </svg></a>
                         <div class="dropdown-content">
-                        <a href="arlistaMiklos.html">Szigetszentmiklós</a>
-                        <a href="arlistaKisszallas.html">Kisszállás</a>
-                    </div>
+                            <a href="arlistaMiklos.html">Szigetszentmiklós</a>
+                            <a href="arlistaKisszallas.html">Kisszállás</a>
+                        </div>
                     </li>
                     <li><a href="idopontfoglalas.html">Időpontfoglalás</a></li>
                 </ul>
@@ -45,12 +59,12 @@
         <main>
             <form>
                 <div class="vez-nev">
-                        <label for="vezetek-nev">Vezetéknév: </label>
-                        <input type="text" name="vezetek-nev" id="vezetek-nev" required>
+                    <label for="vezetek-nev">Vezetéknév: </label>
+                    <input type="text" name="vezetek-nev" id="vezetek-nev" required>
                 </div>
                 <div class="ker-nev">
-                        <label for="kereszt-nev">Keresztnév: </label>
-                        <input type="text" name="kereszt-nev" id="kereszt-nev" required>
+                    <label for="kereszt-nev">Keresztnév: </label>
+                    <input type="text" name="kereszt-nev" id="kereszt-nev" required>
                 </div>
                 <div class="tel">
                     <label for="telefonszam">Telefonszám: </label>
@@ -64,8 +78,10 @@
                     <label for="megjegyzes">Üzenet: </label>
                     <textarea name="megjegyzes" id="megjegyzes" cols="74" rows="8"></textarea>
                 </div>
-                <button onclick="uzenet()">Foglalás</button>
-               <!--  <div class="labelek">
+                <div class="button">
+                    <button onclick="uzenet()">Foglalás</button>
+                </div>
+                <!--  <div class="labelek">
                     <div class="vez-nev">
                         <label for="vezetek-nev">Vezetéknév: </label>
                     </div>
@@ -107,6 +123,7 @@
 
 
 
-<script src="idopontfoglalas.js"></script>   
+    <script src="idopontfoglalas.js"></script>
 </body>
+
 </html>

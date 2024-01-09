@@ -124,6 +124,7 @@ button {
     font-family: 'chamberi super display regular';
     font-weight: 600;
     height: 3rem;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,23 +341,25 @@ li.dropdown {
     }
 
     label {
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
     .vez-nev,
     .ker-nev,
     .tel,
     .email,
-    .megjegyzes {
+    .megjegyzes,
+    .button {
         display: flex;
         flex-flow: column wrap;
         /*justify-content: center; // mobilos nézet // */
         justify-content: space-between;
         align-content: center;
+        align-items: center;
     }
 
     input {
-        height: 5vw;
+        height: 4vw;
         width: 60vw;
     }
 
@@ -366,6 +369,10 @@ li.dropdown {
 
     form {
         width: 80vw;
+        height: 70vh;
+        justify-content: space-evenly;
+        align-content: center;
+        padding-top: 10vw;
     }
-    
+
 }
