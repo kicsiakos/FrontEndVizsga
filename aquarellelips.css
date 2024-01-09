@@ -1,0 +1,229 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-image: url(./img/hatter.jpg);
+    background-size: cover;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+   /*  justify-content: center;
+    align-items: center;
+    align-content: center; */
+    margin-top: 1rem;
+    box-shadow: 5px 5px 20px gray;
+}
+
+.nav-horgonyok li {
+    list-style-type: none;
+    display: inline;
+
+}
+
+.nav-horgonyok a,
+.dropdown-button {
+    text-decoration: none;
+    color: black;
+    font-family: 'Playfair Display';
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+
+}
+
+.nav-horgonyok a:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 1rem;
+
+}
+
+h2.cim {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 2vw;
+    /* font-family: 'jonathan signature'; */
+    font-family: 'Playfair Display';
+    font-weight: 50;
+    font-style: italic;
+    /* height: 10rem; */
+    padding-top: 1rem;
+}
+
+h4.alcim {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2vw;
+    /* font-family: 'jonathan signature'; */
+    font-family: 'Playfair Display';
+    font-weight: 50;
+    font-style: italic;
+    /* height: 10rem; */
+    padding-top: 1rem;
+}
+
+.dropdown-content {
+    font-family: 'Playfair Display';
+    position: absolute;
+    display: none;
+    background-color: white;
+    box-shadow: 5px 5px 20px gray;
+    /* border-radius: 1rem; */
+    /* border: 1px solid black; */
+    box-shadow: 5px 5px 20px gray;
+
+}
+
+.dropdown-content a {
+    padding-top: 1rem;
+    border-bottom: 1px solid black;
+    display: block;
+    padding-bottom: 1rem;
+
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+body {
+    background-color: #f8f4ef;
+}
+
+.dropdown:hover .dropdown-button svg {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    font-family: 'Playfair Display';
+}
+
+p {
+    margin-top: 3vw;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media only screen and (max-width: 1150px) {
+    .nav-horgonyok {
+        display: none;
+        flex-flow: column nowrap;
+        font-size: 3rem;
+        position: absolute;
+        z-index: 1;
+        left: 60px;
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    .nav-horgonyok a {
+        border-bottom: 2px solid rgb(173, 167, 136);
+    }
+
+    .dropdown-content a {
+        padding-top: 0.5rem;
+        border-bottom: 1px solid black;
+        display: inline;
+        padding-bottom: 0.5rem;
+    
+    }
+
+    h2.cim {
+        margin-bottom: 0;
+        padding-top: 0;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    li.dropdown {
+        display: inline;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 10px;
+        left: 220px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .nav-horgonyok svg {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    header {
+        height: 30vw;
+    }
+
+    nav {
+        justify-content: flex-start;
+        padding-left: 1rem;
+    }
+
+    h2.cim {
+        font-size: 8vw;
+    }
+
+    h4.alcim {
+        font-size: 4vw;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+}
+    @media only screen and (max-width: 872px) {
+        .nav-horgonyok {
+            display: none;
+        }
+    
+        .kapcsolat {
+            display: none;
+        }
+    
+        .hamburger {
+            display: block;
+        }
+
+        .hamburger svg {
+            width: 5vw;
+            height: 5vw;
+        }
+
+        main {
+            font-size: 2.5vw;
+        }
+}
