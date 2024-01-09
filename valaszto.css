@@ -15,14 +15,14 @@ main {
     justify-content: center;
     align-items: center;
     align-content: center;
-    font-size: 5vw;
-    line-height: 10vw;
+    font-size: 10vw;
+    line-height: 30vw;
 }
 
 main a {
     text-decoration: none;
     color: black;
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     font-weight: 700;
 }
 

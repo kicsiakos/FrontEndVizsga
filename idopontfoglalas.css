@@ -70,7 +70,7 @@ form {
     width: 70%;
     justify-content: space-evenly;
     font-size: 2rem;
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     letter-spacing: 0.2rem;
     font-weight: 600;
 }
@@ -110,7 +110,7 @@ textarea {
     width: 50%;
     font-size: 1.6rem;
     font-weight: 600;
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     text-align: center;
     display: flex;
     justify-content: center;
@@ -121,7 +121,7 @@ textarea {
 
 button {
     font-size: 2rem;
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     font-weight: 600;
     height: 3rem;
     width: 100%;
@@ -145,7 +145,7 @@ button:hover {
 .dropdown-button {
     text-decoration: none;
     color: black;
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     padding-left: 1rem;
     padding-right: 1rem;
     text-transform: uppercase;
@@ -168,7 +168,7 @@ nav {
 }
 
 .dropdown-content {
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     position: absolute;
     display: none;
     background-color: white;
@@ -329,7 +329,7 @@ li.dropdown {
     }
 
     .main-content p {
-        font-family: 'chamberi super display regular';
+        font-family: 'Playfair Display';
         font-size: 3vw;
         line-height: 1.5rem;
         padding-bottom: 2re;

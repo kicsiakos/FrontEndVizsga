@@ -26,7 +26,7 @@ header {
 .dropdown-button {
     text-decoration: none;
     color: black;
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     padding-left: 1rem;
     padding-right: 1rem;
     text-transform: uppercase;
@@ -60,7 +60,7 @@ h2.cim {
 }
 
 .dropdown-content {
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     position: absolute;
     display: none;
     background-color: white;
@@ -471,7 +471,7 @@ img {
     }
 
     .main-content p {
-        font-family: 'chamberi super display regular';
+        font-family: 'Playfair Display';
         font-size: 3vw;
         line-height: 1.5rem;
         padding-bottom: 2re;

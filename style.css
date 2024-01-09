@@ -17,7 +17,7 @@ body {
 .dropdown-button {
     text-decoration: none;
     color: black;
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     padding-left: 1rem;
     padding-right: 1rem;
     text-transform: uppercase;
@@ -47,11 +47,11 @@ nav {
 }
 
 .fejlec p {
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
 }
 
 .fejlec-titulus {
-    font-size: 3.5rem;
+    font-size: 3rem;
     /* background-color: rgb(173, 167, 136);
     box-shadow: 0px 0px 20px 20px rgb(173, 167, 136); */
 }
@@ -59,8 +59,8 @@ nav {
 .fejlec-nev {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 5rem;
-    padding-bottom: 2rem;
+    font-size: 4rem;
+    padding-bottom: 1rem;
 }
 
 header {
@@ -100,7 +100,7 @@ main {
 }
 
 .main-content p {
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     font-size: 1.3rem;
     line-height: 1.5rem;
     padding-bottom: 2rem;
@@ -132,13 +132,13 @@ footer {
 .mail p,
 .telefon p {
     font-size: 1.1rem;
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     padding-left: 0.5rem;
     font-weight: 600;
 }
 
 .dropdown-content {
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     position: absolute;
     display: none;
     background-color: white;
