@@ -35,6 +35,7 @@ nav {
     flex-flow: row wrap;
     justify-content: center;
     padding-top: 1rem;
+    width: 100%;
 
 }
 
@@ -44,9 +45,9 @@ header {
     display: flex;
     flex-flow: column wrap;
     width: 100%;
-    justify-content: center;
+   /*  justify-content: center;
     align-items: center;
-    align-content: center;
+    align-content: center; */
     margin-top: 1rem;
     box-shadow: 5px 5px 20px gray;
 }
@@ -214,7 +215,7 @@ li.dropdown {
         border-bottom: 1px solid black;
         display: inline;
         padding-bottom: 0.5rem;
-    
+
     }
 
     .dropdown {
@@ -262,12 +263,55 @@ li.dropdown {
     }
 
     header {
-        height: 45vw;
+        height: 30vw;
     }
 
     nav {
         justify-content: flex-start;
         padding-left: 1rem;
+    }
+
+    h2.hely {
+        font-size: 8vw;
+        margin-bottom: 5vw;
+    }
+
+    h2.hely2 {
+        font-size: 8vw;
+        margin-bottom: 5vw;
+    }
+
+    .korrekcio {
+        font-size: 3vw;
+    }
+
+    .szektor p {
+        font-size: 3vw;
+    }
+
+    .szektor h2 {
+        font-size: 3vw;
+    }
+
+    .szektor {
+        flex-direction: column;
+    }
+
+    .szektor-ar {
+        justify-content: center;
+    }
+
+    .szektor-nev {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .esztetika-arlista {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
     }
 }
 
@@ -302,7 +346,7 @@ li.dropdown {
     }
 
     header {
-        height: 45vw;
+        height: 30vw;
     }
 
     .logo {
@@ -320,5 +364,14 @@ li.dropdown {
         font-size: 3vw;
         line-height: 1.5rem;
         padding-bottom: 2re;
+    }
+
+    h2.hely {
+        margin-bottom: 3vw;
+        padding-top: 3vw;
+    }
+
+    h2.hely2 {
+        margin-bottom: 3vw;
     }
 }

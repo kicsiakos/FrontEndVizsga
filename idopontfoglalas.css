@@ -20,9 +20,9 @@ header {
     display: flex;
     flex-flow: column wrap;
     width: 100%;
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
-    align-content: center;
+    align-content: center; */
     margin-top: 1rem;
     box-shadow: 5px 5px 20px gray;
 }
@@ -162,6 +162,7 @@ nav {
     flex-flow: row wrap;
     justify-content: center;
     padding-top: 1rem;
+    width: 100%;
 
 }
 
@@ -219,7 +220,7 @@ li.dropdown {
         border-bottom: 1px solid black;
         display: inline;
         padding-bottom: 0.5rem;
-    
+
     }
 
     .dropdown {
@@ -267,13 +268,19 @@ li.dropdown {
     }
 
     header {
-        height: 45vw;
+        height: 30vw;
     }
 
     nav {
         justify-content: flex-start;
         padding-left: 1rem;
     }
+
+    h2.cim {
+        margin-bottom: 5vw;
+        font-size: 8vw;
+    }
+
 }
 
 @media only screen and (max-width: 872px) {
@@ -307,7 +314,7 @@ li.dropdown {
     }
 
     header {
-        height: 45vw;
+        height: 30vw;
     }
 
     .logo {
@@ -326,4 +333,39 @@ li.dropdown {
         line-height: 1.5rem;
         padding-bottom: 2re;
     }
+
+    h2.cim {
+        margin-bottom: 3vw;
+        padding-top: 0;
+    }
+
+    label {
+        font-size: 5vw;
+    }
+
+    .vez-nev,
+    .ker-nev,
+    .tel,
+    .email,
+    .megjegyzes {
+        display: flex;
+        flex-flow: column wrap;
+        /*justify-content: center; // mobilos nézet // */
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    input {
+        height: 5vw;
+        width: 60vw;
+    }
+
+    textarea {
+        width: 60vw;
+    }
+
+    form {
+        width: 80vw;
+    }
+    
 }
