@@ -50,6 +50,7 @@ header {
     align-content: center; */
     margin-top: 1rem;
     box-shadow: 5px 5px 20px gray;
+    margin-bottom: 2rem;
 }
 
 .hely {
@@ -74,7 +75,7 @@ header {
     font-size: 5rem;
     text-align: center;
     margin-bottom: 2rem;
-    font-family: 'Sacramento', cursive;
+    font-family: 'Playfair Display';
     font-weight: 50;
     font-style: italic;
 }
@@ -132,7 +133,7 @@ h2.hely {
     font-size: 5rem;
     text-align: center;
     margin-bottom: 2rem;
-    font-family: 'Sacramento', cursive;
+    font-family: 'Playfair Display';
     font-weight: 50;
     font-style: italic;
 }
@@ -163,7 +164,7 @@ h2.hely {
 }
 
 .dropdown-content {
-    font-family: 'chamberi super display regular';
+    font-family: 'Playfair Display';
     position: absolute;
     display: none;
     background-color: white;
