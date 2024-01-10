@@ -30,8 +30,8 @@ main {
 main a {
     text-decoration: none;
     color: black;
-    font-family: 'Playfair Display';
-    font-weight: 700;
+    font-family: 'Sacramento', cursive;
+    font-weight: 500;
 }
 
 main a:hover {
