@@ -450,7 +450,8 @@ img {
 
     nav {
         justify-content: flex-start;
-        padding-left: 1rem;
+        padding-left: 3vw;
+        padding-top: 3vw;
     }
 
     h2.cim {

@@ -35,7 +35,6 @@ nav {
     flex-flow: row wrap;
     justify-content: center;
     padding-top: 1rem;
-    width: 100%;
 
 }
 
@@ -194,7 +193,7 @@ li.dropdown {
     display: none;
 }
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1180px) {
     .nav-horgonyok {
         display: none;
         flex-flow: column nowrap;
@@ -269,17 +268,18 @@ li.dropdown {
 
     nav {
         justify-content: flex-start;
-        padding-left: 1rem;
+        padding-left: 3vw;
+        padding-top: 3vw;
     }
 
     h2.hely {
-        font-size: 8vw;
-        margin-bottom: 5vw;
+        font-size: 7vw;
+        margin-bottom: 0vw;
+        padding-top: 0;
     }
 
     h2.hely2 {
         font-size: 8vw;
-        margin-bottom: 5vw;
     }
 
     .korrekcio {
@@ -368,8 +368,9 @@ li.dropdown {
     }
 
     h2.hely {
-        margin-bottom: 3vw;
-        padding-top: 3vw;
+        margin-bottom: 0;
+        padding-top: 0;
+        font-size: 7vw;
     }
 
     h2.hely2 {
