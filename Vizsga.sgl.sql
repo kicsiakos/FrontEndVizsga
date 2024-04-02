@@ -1,0 +1,1 @@
+SELECT cim, megjelenites_datuma FROM bejegyzes LIMIT 3

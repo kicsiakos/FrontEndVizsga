@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="hu">
 
+<?php require_once './config/config.php' ?>;
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +43,7 @@
                             </svg></a>
                         <div class="dropdown-content">
                             <a href="russianlips.html">Ajakfeltöltés</a>
-                           <!--  <a href="#">Skinbooster</a>
+                            <!--  <a href="#">Skinbooster</a>
                             <a href="#">Lokális zsírbontás</a> -->
                         </div>
                     </li>
@@ -50,8 +53,8 @@
                                 <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
                             </svg></a>
                         <div class="dropdown-content">
-                            <a href="arlistaMiklos.html">Szigetszentmiklós</a>
-                            <a href="arlistaKisszallas.html">Kisszállás</a>
+                            <a href="arlistaMiklos.php">Szigetszentmiklós</a>
+                            <a href="arlistaKisszallas.php">Kisszállás</a>
                         </div>
                     </li>
                     <li><a href="idopontfoglalas.html">Időpontfoglalás</a></li>
@@ -60,7 +63,53 @@
             <h2 class="hely">Sminktetoválás - Kisszállás</h2>
         </header>
         <main>
-            <div class="szektor">
+
+
+            <?php
+
+            $conn = new mysqli($servername, $user, $pass, $database);
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            ;
+
+            $sql = "SELECT eljaras_nev, eljaras_tipus, eljaras_ar FROM arlista_sminktetovalas_kisszallas";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $sorok[] = $row;
+                }
+            }
+
+
+            ?>
+
+            <?php for ($i = 0; $i < count($sorok); $i++) { ?>
+
+                <div class="szektor">
+                    <div class="szektor-nev">
+                        <h2>
+                            <?php print ($sorok[$i]['eljaras_nev']) ?>
+                        </h2>
+                        <h2>
+                            <?php print ($sorok[$i]['eljaras_tipus']) ?>
+                        </h2>
+                    </div>
+                    <div class="szektor-ar">
+                        <p>
+                            <?php print ($sorok[$i]['eljaras_ar']) ?>
+                        </p>
+                    </div>
+                </div>
+
+                <?php
+            }
+            ?>
+
+
+            <!--  <div class="szektor">
                 <div class="szektor-nev">
                     <h2>Magic Shading</h2>
                     <h2>Szemöldöktetoválás</h2>
@@ -113,7 +162,7 @@
                 <div class="szektor-ar">
                     <p>15.000 Ft</p>
                 </div>
-            </div>
+            </div> -->
 
     </div>
     <div class="korrekcio">
@@ -126,7 +175,43 @@
     </div>
     <div class="esztetika-arlista">
         <h2 class="hely2">Esztétika - Kisszállás</h2>
-        <div class="szektor">
+
+        <?php $sql2 = "SELECT eljaras_nev, eljaras_tipus, eljaras_ar FROM arlista_esztetika_kisszallas";
+        $result2 = $conn->query($sql2);
+
+        if ($result2->num_rows > 0) {
+            while ($row2 = $result2->fetch_assoc()) {
+                $sorok2[] = $row2;
+            }
+        }
+
+
+        ?>
+
+        <?php for ($i = 0; $i < count($sorok2); $i++) { ?>
+
+            <div class="szektor">
+                <div class="szektor-nev">
+                    <h2>
+                        <?php print ($sorok2[$i]['eljaras_nev']) ?>
+                    </h2>
+                    <h2>
+                        <?php print ($sorok2[$i]['eljaras_tipus']) ?>
+                    </h2>
+                </div>
+                <div class="szektor-ar">
+                    <p>
+                        <?php print ($sorok2[$i]['eljaras_ar']) ?>
+                    </p>
+                </div>
+            </div>
+
+            <?php
+        }
+        ?>
+
+
+        <!-- <div class="szektor">
             <div class="szektor-nev">
                 <h2>Russian lips</h2>
                 <h2>0.55 ml / 1.1 ml</h2>
@@ -152,11 +237,13 @@
             <div class="szektor-ar">
                 <p>35.000 Ft / ampulla</p>
             </div>
-        </div>
+        </div> -->
     </div>
     </main>
     </div>
     <script src="app.js"></script>
 </body>
+
+<?php $conn->close(); ?>;
 
 </html>

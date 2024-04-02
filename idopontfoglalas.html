@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="idopontFoglalas.php">
 </head>
 
 <body>
@@ -50,8 +51,8 @@
                                 <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
                             </svg></a>
                         <div class="dropdown-content">
-                            <a href="arlistaMiklos.html">Szigetszentmiklós</a>
-                            <a href="arlistaKisszallas.html">Kisszállás</a>
+                            <a href="arlistaMiklos.php">Szigetszentmiklós</a>
+                            <a href="arlistaKisszallas.php">Kisszállás</a>
                         </div>
                     </li>
                     <li><a href="idopontfoglalas.html">Időpontfoglalás</a></li>
@@ -60,7 +61,7 @@
             <h2 class="cim">Időpontfoglalás</h2>
         </header>
         <main>
-            <form>
+            <form action="./idopontFoglalas.php" method="POST">
                 <div class="vez-nev">
                     <label for="vezetek-nev">Vezetéknév: </label>
                     <input type="text" name="vezetek-nev" id="vezetek-nev" required>
@@ -79,45 +80,11 @@
                 </div>
                 <div class="megjegyzes">
                     <label for="megjegyzes">Üzenet: </label>
-                    <textarea name="megjegyzes" id="megjegyzes" cols="74" rows="8"></textarea>
+                    <textarea name="megjegyzes" required id="megjegyzes" cols="74" rows="8"></textarea>
                 </div>
                 <div class="button">
-                    <button onclick="uzenet()">Foglalás</button>
+                    <button type="submit">Foglalás</button>
                 </div>
-                <!--  <div class="labelek">
-                    <div class="vez-nev">
-                        <label for="vezetek-nev">Vezetéknév: </label>
-                    </div>
-                    <div class="ker-nev">
-                        <label for="kereszt-nev">Keresztnév: </label>
-                    </div>
-                    <div class="telefonszam">
-                        <label for="telefon">Telefonszám: </label>
-                    </div>
-                    <div class="email">
-                        <label for="email">E-mail cím: </label>
-                    </div>
-                    <div class="megjegyzes">
-                        <label for="megjegyzes">Üzenet: </label>
-                    </div>
-                </div>
-                <div class="inputok">
-                    <div class="vez-nev-input">
-                        <input type="text" name="vezetek-nev" id="vezetek-nev">
-                    </div>
-                    <div class="ker-nev-input">
-                        <input type="text" name="kereszt-nev" id="kereszt-nev">
-                    </div>
-                    <div class="telefonszam-input">
-                        <input type="tel" name="telefon" id="telefon">
-                    </div>
-                    <div class="email-input">
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div class="megjegyzes-input">
-                        <textarea name="megjegyzes" id="megjegyzes" cols="30" rows="10"></textarea>
-                    </div>
-                </div> -->
             </form>
         </main>
     </div>
