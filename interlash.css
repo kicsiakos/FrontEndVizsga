@@ -9,9 +9,6 @@ header {
     display: flex;
     flex-flow: column wrap;
     width: 100%;
-   /*  justify-content: center;
-    align-items: center;
-    align-content: center; */
     margin-top: 1rem;
     box-shadow: 5px 5px 20px gray;
 }
@@ -70,8 +67,6 @@ h4.alcim {
     display: none;
     background-color: white;
     box-shadow: 5px 5px 20px gray;
-    /* border-radius: 1rem; */
-    /* border: 1px solid black; */
     box-shadow: 5px 5px 20px gray;
 
 }
@@ -143,7 +138,7 @@ p {
         border-bottom: 1px solid black;
         display: inline;
         padding-bottom: 0.5rem;
-    
+
     }
 
     h2.cim {
@@ -199,25 +194,26 @@ p {
         margin-bottom: 0;
     }
 }
-    @media only screen and (max-width: 872px) {
-        .nav-horgonyok {
-            display: none;
-        }
-    
-        .kapcsolat {
-            display: none;
-        }
-    
-        .hamburger {
-            display: block;
-        }
 
-        .hamburger svg {
-            width: 5vw;
-            height: 5vw;
-        }
+@media only screen and (max-width: 872px) {
+    .nav-horgonyok {
+        display: none;
+    }
 
-        main {
-            font-size: 2.5vw;
-        }
+    .kapcsolat {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger svg {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    main {
+        font-size: 2.5vw;
+    }
 }

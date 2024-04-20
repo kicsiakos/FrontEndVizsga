@@ -9,9 +9,6 @@ header {
     display: flex;
     flex-flow: column wrap;
     width: 100%;
-   /*  justify-content: center;
-    align-items: center;
-    align-content: center; */
     margin-top: 1rem;
     box-shadow: 5px 5px 20px gray;
 }
@@ -51,11 +48,9 @@ h2.cim {
     font-size: 5rem;
     text-align: center;
     margin-bottom: 2rem;
-    /* font-family: 'jonathan signature'; */
     font-family: 'Playfair Display';
     font-weight: 50;
     font-style: italic;
-    /* height: 10rem; */
     padding-top: 1rem;
 }
 
@@ -65,8 +60,6 @@ h2.cim {
     display: none;
     background-color: white;
     box-shadow: 5px 5px 20px gray;
-    /* border-radius: 1rem; */
-    /* border: 1px solid black; */
     box-shadow: 5px 5px 20px gray;
 
 }
@@ -99,7 +92,6 @@ body {
     width: 100%;
     justify-content: center;
     align-content: center;
-   /*  margin-top: 1rem; */
     margin-bottom: 1rem;
 }
 
@@ -282,91 +274,6 @@ img {
     padding: 1rem;
 }
 
-/* #kep1:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep2:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep3:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep4:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep5:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep6:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep7:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep8:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep9:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep10:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep11:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep12:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep13:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep14:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep15:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep16:hover {
-    width: 45rem;
-    height: 50rem;
-}
-
-#kep17:hover {
-    width: 45rem;
-    height: 50rem;
-} */
-
 .hamburger {
     display: none;
 }
@@ -393,7 +300,7 @@ img {
         border-bottom: 1px solid black;
         display: inline;
         padding-bottom: 0.5rem;
-    
+
     }
 
     h2.cim {
@@ -517,30 +424,31 @@ img {
 }
 
 @media only screen and (max-width: 872px) {
+
     #kep1,
-#kep2,
-#kep3,
-#kep4,
-#kep5,
-#kep6,
-#kep7,
-#kep8,
-#kep9,
-#kep10,
-#kep11,
-#kep12,
-#kep13,
-#kep14,
-#kep15,
-#kep16,
-#kep17,
-#kep18,
-#kep19,
-#kep20,
-#kep21,
-#kep22,
-#kep23 {
-    width: 60vw;
-    height: 75vw;
+    #kep2,
+    #kep3,
+    #kep4,
+    #kep5,
+    #kep6,
+    #kep7,
+    #kep8,
+    #kep9,
+    #kep10,
+    #kep11,
+    #kep12,
+    #kep13,
+    #kep14,
+    #kep15,
+    #kep16,
+    #kep17,
+    #kep18,
+    #kep19,
+    #kep20,
+    #kep21,
+    #kep22,
+    #kep23 {
+        width: 60vw;
+        height: 75vw;
+    }
 }
-} 

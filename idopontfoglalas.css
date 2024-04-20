@@ -7,7 +7,6 @@
 
     background-size: cover;
     display: flex;
-    /*  width: 100%; */
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -20,9 +19,6 @@ header {
     display: flex;
     flex-flow: column wrap;
     width: 100%;
-    /* justify-content: center;
-    align-items: center;
-    align-content: center; */
     margin-top: 1rem;
     box-shadow: 5px 5px 20px gray;
 }
@@ -39,7 +35,6 @@ h2.cim {
     font-family: 'Playfair Display';
     font-weight: 50;
     font-style: italic;
-    /* height: 10rem; */
     padding-top: 2rem;
 }
 
@@ -75,24 +70,6 @@ form {
     font-weight: 600;
 }
 
-/* .labelek {
-    display: flex;
-    flex-flow: column wrap;
-    font-size: 1.5rem;
-    justify-content: space-between;
-    align-items: flex-end;
-    align-content: center;
-}
-
-.inputok {
-    display: flex;
-    flex-flow: column wrap;
-    font-size: 1.5rem;
-    justify-content: space-between;
-    align-items: flex-end;
-    align-content: center;
-} */
-
 .vez-nev,
 .ker-nev,
 .tel,
@@ -100,7 +77,6 @@ form {
 .megjegyzes {
     display: flex;
     flex-flow: row wrap;
-    /*justify-content: center; // mobilos nézet // */
     justify-content: space-between;
     align-content: center;
 }
@@ -163,7 +139,6 @@ nav {
     flex-flow: row wrap;
     justify-content: center;
     padding-top: 1rem;
-   /*  width: 100%; */
 
 }
 
@@ -173,8 +148,6 @@ nav {
     display: none;
     background-color: white;
     box-shadow: 5px 5px 20px gray;
-    /* border-radius: 1rem; */
-    /* border: 1px solid black; */
     box-shadow: 5px 5px 20px gray;
 
 }
@@ -277,6 +250,7 @@ li.dropdown {
         padding-left: 3vw;
         padding-top: 3vw;
     }
+
     h2.cim {
         margin-bottom: 5vw;
         font-size: 8vw;
@@ -352,7 +326,6 @@ li.dropdown {
     .button {
         display: flex;
         flex-flow: column wrap;
-        /*justify-content: center; // mobilos nézet // */
         justify-content: space-between;
         align-content: center;
         align-items: center;

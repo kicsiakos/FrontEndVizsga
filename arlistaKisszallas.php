@@ -43,8 +43,7 @@
                             </svg></a>
                         <div class="dropdown-content">
                             <a href="russianlips.html">Ajakfeltöltés</a>
-                            <!--  <a href="#">Skinbooster</a>
-                            <a href="#">Lokális zsírbontás</a> -->
+
                         </div>
                     </li>
                     <li><a href="galeria.html">Galéria</a></li>
@@ -63,8 +62,6 @@
             <h2 class="hely">Sminktetoválás - Kisszállás</h2>
         </header>
         <main>
-
-
             <?php
 
             $conn = new mysqli($servername, $user, $pass, $database);
@@ -86,7 +83,9 @@
 
             ?>
 
-            <?php for ($i = 0; $i < count($sorok); $i++) { ?>
+            <?php
+
+            for ($i = 0; $i < count($sorok); $i++) { ?>
 
                 <div class="szektor">
                     <div class="szektor-nev">
@@ -108,62 +107,6 @@
             }
             ?>
 
-
-            <!--  <div class="szektor">
-                <div class="szektor-nev">
-                    <h2>Magic Shading</h2>
-                    <h2>Szemöldöktetoválás</h2>
-                </div>
-                <div class="szektor-ar">
-                    <p>35.000 Ft</p>
-                </div>
-            </div>
-            <div class="szektor">
-                <div class="szektor-nev">
-                    <h2>Aquarelle lips</h2>
-                    <h2>Ajaktetoválás</h2>
-                </div>
-                <div class="szektor-ar">
-                    <p>40.000 Ft</p>
-                </div>
-            </div>
-            <div class="szektor">
-                <div class="szektor-nev">
-                    <h2>Frozen lips</h2>
-                    <h2>Ajaktetoválás</h2>
-                </div>
-                <div class="szektor-ar">
-                    <p>45.000 Ft</p>
-                </div>
-            </div>
-            <div class="szektor">
-                <div class="szektor-nev">
-                    <h2>3d lips</h2>
-                    <h2>Ajaktetoválás</h2>
-                </div>
-                <div class="szektor-ar">
-                    <p>50.000 Ft</p>
-                </div>
-            </div>
-            <div class="szektor">
-                <div class="szektor-nev">
-                    <h2>Soft liner</h2>
-                    <h2>Füstös szemhéjtetoválás</h2>
-                </div>
-                <div class="szektor-ar">
-                    <p>30.000 Ft</p>
-                </div>
-            </div>
-            <div class="szektor">
-                <div class="szektor-nev">
-                    <h2>Interlash</h2>
-                    <h2>Szempillasűrítő tetoválás</h2>
-                </div>
-                <div class="szektor-ar">
-                    <p>15.000 Ft</p>
-                </div>
-            </div> -->
-
     </div>
     <div class="korrekcio">
         <div class="honap">
@@ -184,7 +127,6 @@
                 $sorok2[] = $row2;
             }
         }
-
 
         ?>
 
@@ -210,34 +152,6 @@
         }
         ?>
 
-
-        <!-- <div class="szektor">
-            <div class="szektor-nev">
-                <h2>Russian lips</h2>
-                <h2>0.55 ml / 1.1 ml</h2>
-            </div>
-            <div class="szektor-ar">
-                <p>40.000 Ft / 60.000 Ft</p>
-            </div>
-        </div>
-        <div class="szektor">
-            <div class="szektor-nev">
-                <h2>NTCF 135</h2>
-                <h2>Skinbooster</h2>
-            </div>
-            <div class="szektor-ar">
-                <p>30.000 Ft / ampulla</p>
-            </div>
-        </div>
-        <div class="szektor">
-            <div class="szektor-nev">
-                <h2>Lemon bottle</h2>
-                <h2>Zsírbontó injekció</h2>
-            </div>
-            <div class="szektor-ar">
-                <p>35.000 Ft / ampulla</p>
-            </div>
-        </div> -->
     </div>
     </main>
     </div>

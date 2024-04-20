@@ -44,9 +44,6 @@ header {
     display: flex;
     flex-flow: column wrap;
     width: 100%;
-   /*  justify-content: center;
-    align-items: center;
-    align-content: center; */
     margin-top: 1rem;
     box-shadow: 5px 5px 20px gray;
     margin-bottom: 2rem;
@@ -167,8 +164,6 @@ h2.hely {
     position: absolute;
     display: none;
     background-color: white;
-    /* border-radius: 1rem; */
-    /* border: 1px solid black; */
     box-shadow: 5px 5px 20px gray;
 
 }
