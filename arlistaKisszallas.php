@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu">
 
-<?php require_once './config/config.php' ?>;
+<?php require_once './config/config.php' ?>
 
 
 <head>
