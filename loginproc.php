@@ -28,7 +28,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['logindate'] = date('YYYY.MM.DD');
-                header('Location: index.php');
+                header('Location: admin.php');
 
             } else {
                 $errorMessage = date("Y.m.d H:i:s") . " E-mail cím jó de a jelszó helytelen\n";
