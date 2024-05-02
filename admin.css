@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.table {
+    margin: 10px;
+}
+
+body {
+    background-color: #f8f4ef;
+}
+
+table {
+    border-radius: 5px;
+}
+
+th, td, button {
+    padding: 3px;
+    text-align: center;
+}
+
+.delete {
+    fill: red;
+}
+
+button {
+    font-weight: bold;
+}
