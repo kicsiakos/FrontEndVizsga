@@ -8,14 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin.css">
     <title>Admin felület</title>
-    <style>
-        table,
-        td,
-        th {
-            border: 2px solid black;
-        }
-    </style>
 </head>
+
+<header>
+    <a href="index.php" id="logOut">KIJELENTKEZÉS</a>
+</header>
 
 <body>
     <div class="container">
@@ -41,7 +38,7 @@
 
                 ?>
                 <tr>
-                    <th colspan="6">Árlista</th>
+                    <th colspan="8">Árlista</th>
                 </tr>
                 <tr>
                     <th>ID</th>

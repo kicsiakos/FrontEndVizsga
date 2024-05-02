@@ -8,6 +8,20 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    align-content: center;
+}
+
+header {
+    height: 100px;
+}
+
+#logOut {
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
 .table {
@@ -22,7 +36,9 @@ table {
     border-radius: 5px;
 }
 
-th, td, button {
+th,
+td,
+button {
     padding: 3px;
     text-align: center;
 }
@@ -33,4 +49,10 @@ th, td, button {
 
 button {
     font-weight: bold;
+}
+
+table,
+td,
+th {
+    border: 2px solid black;
 }
