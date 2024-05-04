@@ -5,7 +5,7 @@ require_once ('./config/config.php');
 $servername = "localhost";
 $user = "root";
 $pass = "";
-$database = "vizsgaweb";
+$database = "phpvizsga";
 
 $conn = new mysqli($servername, $user, $pass, $database);
 if (!$conn) {
@@ -37,7 +37,7 @@ if (
         $emailErr = "Helytelen e-mail formátum!";
     }
     $megjegyzes = htmlspecialchars($_POST["megjegyzes"]);
-    $sql = "INSERT INTO foglalas (vezeteknev, keresztnev, telefonszam, emailcim, megjegyzes)
+    $sql = "INSERT INTO foglalasok (vezeteknev, keresztnev, telefonszam, emailcim, megjegyzes)
             VALUES ('$vezetekNev', '$keresztNev', '$telefonSzam', '$emailCim', '$megjegyzes')";
 }
 

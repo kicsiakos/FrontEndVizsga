@@ -50,7 +50,7 @@
                 </tr>
                 <?php for ($i = 0; $i < count($sorok); $i++) { ?>
                     <tr>
-                        <td><?php print ($sorok[$i]['id']) ?></td>
+                        <td><b><?php print ($sorok[$i]['id']) ?></b></td>
                         <td><?php print ($sorok[$i]['eljaras_neve']) ?></td>
                         <td><?php print ($sorok[$i]['megjegyzes']) ?></td>
                         <td><?php print ($sorok[$i]['eljaras_helyszine']) ?></td>
@@ -69,7 +69,68 @@
                             </form>
                         </td>
 
-                        <td><button>MÓDOSÍTÁS</button></td>
+                        <td>
+                            <form action="edit.php" method="POST">
+                                <input type="hidden" name="myId" value="<?php print ($sorok[$i]['id']) ?>">
+                                <input type="hidden" name="myName" value="<?php print ($sorok[$i]['eljaras_neve']) ?>">
+                                <input type="hidden" name="myNote" value="<?php print ($sorok[$i]['megjegyzes']) ?>">
+                                <input type="hidden" name="myLoc" value="<?php print ($sorok[$i]['eljaras_helyszine']) ?>">
+                                <input type="hidden" name="myPrice" value="<?php print ($sorok[$i]['eljaras_ara']) ?>">
+                                <input type="hidden" name="myMode" value="<?php print ($sorok[$i]['eljaras_mod']) ?>">
+                                <?php
+                                $sorok[$i]['id'] = $_SESSION['id'];
+                                ?>
+                                <button>MÓDOSÍTÁS</button>
+                            </form>
+                        </td>
+                    <?php } ?>
+
+                </tr>
+                <?php mysqli_close($conn) ?>
+                <?php unset($sorok) ?>
+
+            </table>
+        </div>
+        <div class="table">
+            <table>
+                <?php
+
+                $conn = new mysqli($servername, $user, $pass, $database);
+                $_SESSION['foglalasTabla'] = "foglalasok";
+                $sql = "SELECT  id,
+                                vezeteknev,
+                                keresztnev,
+                                telefonszam,
+                                emailcim,
+                                megjegyzes FROM " . $_SESSION['foglalasTabla'];
+
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $sorok[] = $row;
+                    }
+                }
+
+                ?>
+                <tr>
+                    <th colspan="8">Foglalások</th>
+                </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Vezetéknév</th>
+                    <th>Keresztnév</th>
+                    <th>Telefonszám</th>
+                    <th>E-mail cím</th>
+                    <th>Megjegyzés</th>
+                </tr>
+                <?php for ($i = 0; $i < count($sorok); $i++) { ?>
+                    <tr>
+                        <td><b><?php print ($sorok[$i]['id']) ?></b></td>
+                        <td><?php print ($sorok[$i]['vezeteknev']) ?></td>
+                        <td><?php print ($sorok[$i]['keresztnev']) ?></td>
+                        <td><?php print ($sorok[$i]['telefonszam']) ?></td>
+                        <td><?php print ($sorok[$i]['emailcim']) ?></td>
+                        <td><?php print ($sorok[$i]['megjegyzes']) ?></td>
                     <?php } ?>
 
                 </tr>

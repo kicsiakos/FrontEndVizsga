@@ -71,7 +71,7 @@
             }
             ;
 
-            $sql = "SELECT eljaras_nev, eljaras_tipus, eljaras_ar FROM arlista_sminktetovalas_kisszallas";
+            $sql = "SELECT eljaras_neve, megjegyzes, eljaras_ara FROM arlista WHERE eljaras_helyszine = 'Kisszállás' AND eljaras_mod = 'Tetoválás'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -90,15 +90,15 @@
                 <div class="szektor">
                     <div class="szektor-nev">
                         <h2>
-                            <?php print ($sorok[$i]['eljaras_nev']) ?>
+                            <?php print ($sorok[$i]['eljaras_neve']) ?>
                         </h2>
                         <h2>
-                            <?php print ($sorok[$i]['eljaras_tipus']) ?>
+                            <?php print ($sorok[$i]['megjegyzes']) ?>
                         </h2>
                     </div>
                     <div class="szektor-ar">
                         <p>
-                            <?php print ($sorok[$i]['eljaras_ar']) ?>
+                            <?php print ($sorok[$i]['eljaras_ara']) ?>
                         </p>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
     <div class="esztetika-arlista">
         <h2 class="hely2">Esztétika - Kisszállás</h2>
 
-        <?php $sql2 = "SELECT eljaras_nev, eljaras_tipus, eljaras_ar FROM arlista_esztetika_kisszallas";
+        <?php $sql2 = "SELECT eljaras_neve, megjegyzes, eljaras_ara FROM arlista WHERE eljaras_helyszine = 'Kisszállás' AND eljaras_mod = 'Esztétika'";
         $result2 = $conn->query($sql2);
 
         if ($result2->num_rows > 0) {
@@ -135,15 +135,15 @@
             <div class="szektor">
                 <div class="szektor-nev">
                     <h2>
-                        <?php print ($sorok2[$i]['eljaras_nev']) ?>
+                        <?php print ($sorok2[$i]['eljaras_neve']) ?>
                     </h2>
                     <h2>
-                        <?php print ($sorok2[$i]['eljaras_tipus']) ?>
+                        <?php print ($sorok2[$i]['megjegyzes']) ?>
                     </h2>
                 </div>
                 <div class="szektor-ar">
                     <p>
-                        <?php print ($sorok2[$i]['eljaras_ar']) ?>
+                        <?php print ($sorok2[$i]['eljaras_ara']) ?>
                     </p>
                 </div>
             </div>

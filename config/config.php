@@ -2,4 +2,4 @@
 $servername = "localhost";
 $user       = "root";
 $pass       = "";
-$database   = "vizsgaweb";
+$database   = "phpvizsga";
