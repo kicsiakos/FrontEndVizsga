@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu">
 
-<?php require_once './config/config.php' ?>
+<?php require_once './config/conf.php' ?>
 
 
 <head>
@@ -56,6 +56,7 @@
                         </div>
                     </li>
                     <li><a href="idopontfoglalas.html">Időpontfoglalás</a></li>
+                    <li><a href="login.php">ADMIN Felület</a></li>
                 </ul>
             </nav>
             <h2 class="hely">Sminktetoválás - Szigetszentmiklós</h2>

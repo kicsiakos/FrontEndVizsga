@@ -1,11 +1,6 @@
 <?php
 require_once ('./fv/adatkezeles.php');
-require_once ('./config/config.php');
-
-$servername = "localhost";
-$user = "root";
-$pass = "";
-$database = "phpvizsga";
+require_once ('config/conf.php');
 
 $conn = new mysqli($servername, $user, $pass, $database);
 if (!$conn) {

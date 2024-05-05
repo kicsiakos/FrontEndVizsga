@@ -57,7 +57,7 @@
                         </div>
                     </li>
                     <li><a href="idopontfoglalas.html">Időpontfoglalás</a></li>
-                    <li><a href="login.php">Bejelentkezés</a></li>
+                    <li><a href="login.php">ADMIN Felület</a></li>
                 </ul>
             </nav>
             <div class="fejlec">

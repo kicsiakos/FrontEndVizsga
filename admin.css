@@ -24,6 +24,15 @@ header {
     font-weight: bold;
 }
 
+#mainPage {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
 .table {
     margin: 10px;
 }

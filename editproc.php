@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ('./config/config.php');
+require_once ('config/conf.php');
 
 $conn = new mysqli($servername, $user, $pass, $database);
 

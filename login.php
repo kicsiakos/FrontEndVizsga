@@ -12,6 +12,11 @@ session_start()
     <link rel="stylesheet" href="login.css">
 </head>
 
+<?php
+if (isset($_SESSION['id'])) {
+    header("Location: admin.php");
+} ?>
+
 <body>
     <div class="form">
         <form method="POST" action="loginproc.php">

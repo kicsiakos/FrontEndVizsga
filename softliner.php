@@ -52,6 +52,7 @@
                     </div>
                 </li>
                 <li><a href="idopontfoglalas.html">Időpontfoglalás</a></li>
+                <li><a href="login.php">ADMIN Felület</a></li>
             </ul>
         </nav>
         <h2 class="cim">SOFT LINER</h2>

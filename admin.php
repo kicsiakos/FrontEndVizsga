@@ -1,5 +1,5 @@
 <?php session_start() ?>
-<?php require_once ('conf.php') ?>
+<?php require_once ('config/conf.php') ?>
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -11,7 +11,8 @@
 </head>
 
 <header>
-    <a href="index.php" id="logOut">KIJELENTKEZÉS</a>
+    <a href="index.php" id="mainPage">FŐOLDAL</a>
+    <a href="logoutproc.php" id="logOut">KIJELENTKEZÉS</a>
 </header>
 
 <body>

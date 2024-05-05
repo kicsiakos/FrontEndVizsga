@@ -1,5 +1,5 @@
 <?php session_start() ?>
-<?php require_once ('conf.php') ?>
+<?php require_once ('config/conf.php') ?>
 
 <!DOCTYPE html>
 <html lang="hu">
