@@ -21,7 +21,7 @@
         <label for="eljarasHelyszine">Eljárás helyszíne:</label>
         <input type="text" name="eljarasHelyszine" id="eljarasHelyszine" value="<?php echo $_POST['myLoc'] ?>">
         <label for="eljarasAra">Eljárás Ára:</label>
-        <input type="tel" name="eljarasAra" id="eljarasAra" value="<?php echo $_POST['myPrice'] ?>">
+        <input type="text" name="eljarasAra" id="eljarasAra" value="<?php echo $_POST['myPrice'] ?>">
         <label for="esztetikaTetovalas">Esztétika/Tetoválás:</label>
         <select name="esztetikaTetovalas" id="esztetikaTetovalas">  
             <option value="<?php echo $_POST['myMode'] ?>"><?php echo $_POST['myMode'] ?></option>

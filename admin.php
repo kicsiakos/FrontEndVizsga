@@ -92,6 +92,25 @@
 
             </table>
         </div>
+        <div class="newLine">
+        <form action="addNewLine.php" method="POST">
+        <label for="newEljarasNeve">Eljárás neve:</label>
+        <input type="text" name="newEljarasNeve" id="newEljarasNeve">
+        <label for="newMegjegyzés">Megjegyzés:</label>
+        <input type="text" name="newMegjegyzés" id="newMegjegyzés">
+        <label for="newEljarasHelyszine">Eljárás helyszíne:</label>
+        <input type="text" name="newEljarasHelyszine" id="newEljarasHelyszine">
+        <label for="newEljarasAra">Eljárás Ára:</label>
+        <input type="text" name="newEljarasAra" id="newEljarasAra">
+        <label for="newEsztetikaTetovalas">Esztétika/Tetoválás:</label>
+        <select name="newEsztetikaTetovalas" id="newEsztetikaTetovalas">  
+            <option value="Esztétika">Esztétika</option>
+            <option value="Tetoválás">Tetoválás</option>
+        </select>
+        <button>ÚJ SOR HOZZÁADÁSA</button>
+    </form>
+        </div>
+
         <div class="table">
             <table>
                 <?php
