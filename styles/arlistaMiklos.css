@@ -5,6 +5,7 @@
 
 body {
     background-color: #f8f4ef;
+
 }
 
 .nav-horgonyok li {
@@ -39,7 +40,7 @@ nav {
 }
 
 header {
-    background-image: url(./img/hatter.jpg);
+    background-image: url(../img/hatter.jpg);
     background-size: cover;
     display: flex;
     flex-flow: column wrap;

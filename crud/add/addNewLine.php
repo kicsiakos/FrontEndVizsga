@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ('config/conf.php');
+require_once ('../../config/conf.php');
 
 $conn = new mysqli($servername, $user, $pass, $database);
 
@@ -12,7 +12,7 @@ $sql = "INSERT INTO arlista (eljaras_neve, megjegyzes, eljaras_helyszine, eljara
                 '" . $_POST['newEsztetikaTetovalas'] . "');";
 
 if (mysqli_query($conn, $sql)) {
-    header("Location: admin.php");
+    header("Location: ../admin.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

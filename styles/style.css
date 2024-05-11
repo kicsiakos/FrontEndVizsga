@@ -3,112 +3,8 @@
     padding: 0;
 }
 
-.cim {
-
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-header {
-    width: 100%;
-    background-image: url(./img/hatter.jpg);
-    background-size: cover;
-    display: flex;
-    flex-flow: column wrap;
-    width: 100%;
-    margin-top: 1rem;
-    box-shadow: 5px 5px 20px gray;
-}
-
-.dropdown:hover .dropdown-button svg {
-    transform: rotate(180deg);
-    transition: 0.5s;
-}
-
-h2.cim {
-    font-size: 5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-family: 'Playfair Display';
-    font-weight: 50;
-    font-style: italic;
-    padding-top: 2rem;
-}
-
 body {
     background-color: #f8f4ef;
-}
-
-.content {
-    width: 100%;
-    text-align: left;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    height: 40rem;
-}
-
-form {
-    display: flex;
-    flex-flow: column wrap;
-    width: 70%;
-    justify-content: space-evenly;
-    font-size: 2rem;
-    font-family: 'Playfair Display';
-    letter-spacing: 0.2rem;
-    font-weight: 600;
-}
-
-.vez-nev,
-.ker-nev,
-.tel,
-.email,
-.megjegyzes {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-content: center;
-}
-
-input,
-textarea {
-    width: 50%;
-    font-size: 1.6rem;
-    font-weight: 600;
-    font-family: 'Playfair Display';
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    box-shadow: 5px 5px 20px gray;
-}
-
-button {
-    font-size: 2rem;
-    font-family: 'Playfair Display';
-    font-weight: 600;
-    height: 3rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
-}
-
-button:hover {
-    background-color: rgb(214, 214, 176);
 }
 
 .nav-horgonyok li {
@@ -139,7 +35,111 @@ nav {
     flex-flow: row wrap;
     justify-content: center;
     padding-top: 1rem;
+}
 
+.fejlec {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    font-family: 'Playfair Display';
+}
+
+.fejlec-titulus {
+    font-size: 3rem;
+    font-family: 'Sacramento', cursive;
+}
+
+.fejlec-nev {
+    font-family: 'Playfair Display';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 4rem;
+    padding-bottom: 1rem;
+}
+
+header {
+    background-image: url(../img/hatter.jpg);
+    height: 25rem;
+    background-size: cover;
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 1rem;
+    width: 100%;
+    box-shadow: 5px 5px 20px gray;
+}
+
+main {
+    display: flex;
+    flex-flow: column wrap;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.logo {
+    background-image: url(../img/logo2.jpeg);
+    height: 15rem;
+    width: 20rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+.main-content {
+    text-align: center;
+}
+
+.main-content p {
+    font-family: 'Playfair Display';
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.footer-szoveg {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-family: 'Playfair Display';
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    padding-right: 1rem;
+}
+
+.insta,
+.facebook,
+.mail,
+.telefon {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.facebook p,
+.insta p,
+.mail p,
+.telefon p {
+    font-size: 1.1rem;
+    font-family: 'Playfair Display';
+    padding-left: 0.5rem;
+    font-weight: 600;
 }
 
 .dropdown-content {
@@ -147,7 +147,6 @@ nav {
     position: absolute;
     display: none;
     background-color: white;
-    box-shadow: 5px 5px 20px gray;
     box-shadow: 5px 5px 20px gray;
 
 }
@@ -168,8 +167,39 @@ li.dropdown {
     display: block;
 }
 
+.dropdown:hover .dropdown-button svg {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+.kapcsolat {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.kapcsolat a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
 .hamburger {
     display: none;
+}
+
+.kapcsolat svg {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.profil img {
+    width: 18vw;
+    border: 2px solid black;
+    border-radius: 10vw;
+    margin-top: 1rem;
 }
 
 @media only screen and (max-width: 1150px) {
@@ -242,7 +272,7 @@ li.dropdown {
     }
 
     header {
-        height: 30vw;
+        height: 45vw;
     }
 
     nav {
@@ -251,11 +281,10 @@ li.dropdown {
         padding-top: 3vw;
     }
 
-    h2.cim {
-        margin-bottom: 5vw;
-        font-size: 8vw;
+    .logo {
+        width: 25vw;
+        height: 20vw;
     }
-
 }
 
 @media only screen and (max-width: 872px) {
@@ -289,7 +318,7 @@ li.dropdown {
     }
 
     header {
-        height: 30vw;
+        height: 45vw;
     }
 
     .logo {
@@ -303,55 +332,15 @@ li.dropdown {
     }
 
     .main-content p {
-        font-family: 'Playfair Display';
+        font-family: 'chamberi super display regular';
         font-size: 3vw;
         line-height: 1.5rem;
         padding-bottom: 2re;
     }
 
-    h2.cim {
-        margin-bottom: 3vw;
-        padding-top: 0;
-    }
-
-    label {
-        font-size: 1.2rem;
-    }
-
-    .vez-nev,
-    .ker-nev,
-    .tel,
-    .email,
-    .megjegyzes,
-    .button {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
-    }
-
-    input {
+    .footer-szoveg {
+        font-family: 'chamberi super display regular';
         font-size: 3vw;
-        height: 4vw;
-        width: 60vw;
+        line-height: 1.5rem;
     }
-
-    textarea {
-        font-size: 2vw;
-        width: 60vw;
-    }
-
-    form {
-        font-size: 2vw;
-        width: 80vw;
-        justify-content: space-evenly;
-        align-content: center;
-        padding-top: 10vw;
-    }
-
-    button {
-        font-size: 4vw;
-    }
-
 }

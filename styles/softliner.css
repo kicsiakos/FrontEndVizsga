@@ -4,7 +4,7 @@
 }
 
 header {
-    background-image: url(./img/hatter.jpg);
+    background-image: url(../img/hatter.jpg);
     background-size: cover;
     display: flex;
     flex-flow: column wrap;
@@ -60,6 +60,7 @@ h4.alcim {
     font-weight: 50;
     font-style: italic;
 }
+
 
 .dropdown-content {
     font-family: 'Playfair Display';

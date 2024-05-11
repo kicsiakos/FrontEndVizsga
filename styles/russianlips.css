@@ -4,7 +4,7 @@
 }
 
 header {
-    background-image: url(./img/hatter.jpg);
+    background-image: url(../img/hatter.jpg);
     background-size: cover;
     display: flex;
     flex-flow: column wrap;
@@ -60,7 +60,6 @@ h4.alcim {
     font-weight: 50;
     font-style: italic;
 }
-
 
 .dropdown-content {
     font-family: 'Playfair Display';
@@ -139,7 +138,7 @@ p {
         border-bottom: 1px solid black;
         display: inline;
         padding-bottom: 0.5rem;
-    
+
     }
 
     h2.cim {
@@ -195,25 +194,26 @@ p {
         margin-bottom: 0;
     }
 }
-    @media only screen and (max-width: 872px) {
-        .nav-horgonyok {
-            display: none;
-        }
-    
-        .kapcsolat {
-            display: none;
-        }
-    
-        .hamburger {
-            display: block;
-        }
 
-        .hamburger svg {
-            width: 5vw;
-            height: 5vw;
-        }
+@media only screen and (max-width: 872px) {
+    .nav-horgonyok {
+        display: none;
+    }
 
-        main {
-            font-size: 2.5vw;
-        }
+    .kapcsolat {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger svg {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    main {
+        font-size: 2.5vw;
+    }
 }

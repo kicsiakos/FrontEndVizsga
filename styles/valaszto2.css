@@ -7,7 +7,7 @@ body {
     background-color: #f8f4ef;
     display: flex;
     align-content: center;
-    
+    height: 100vh;
 }
 
 .content {
@@ -24,7 +24,7 @@ main {
     align-items: center;
     align-content: center;
     font-size: 7vw;
-    background-image: url(./img/hatter.jpg);
+    background-image: url(../img/hatter.jpg);
 }
 
 main a {
@@ -33,7 +33,6 @@ main a {
     font-family: 'Sacramento', cursive;
     font-weight: 500;
 }
-
 
 main a:hover {
     transform: scale(1.5);

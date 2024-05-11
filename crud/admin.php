@@ -1,17 +1,17 @@
 <?php session_start() ?>
-<?php require_once ('config/conf.php') ?>
+<?php require_once ('../config/conf.php') ?>
 <!DOCTYPE html>
 <html lang="hu">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../styles/admin.css">
     <title>Admin felület</title>
 </head>
 
 <header>
-    <a href="index.php" id="mainPage">FŐOLDAL</a>
+    <a href="../index.php" id="mainPage">FŐOLDAL</a>
     <a href="logoutproc.php" id="logOut">KIJELENTKEZÉS</a>
 </header>
 
@@ -59,7 +59,7 @@
                         <td><?php print ($sorok[$i]['eljaras_mod']) ?></td>
 
                         <td>
-                            <form action="delete.php" method="POST">
+                            <form action="./delete/delete.php" method="POST">
                                 <input type="hidden" name="myId" value="<?php print ($sorok[$i]['id']) ?>">
                                 <button type="submit">TÖRLÉS
                                     <svg class="delete" xmlns="http://www.w3.org/2000/svg" width="10" height="10"
@@ -71,7 +71,7 @@
                         </td>
 
                         <td>
-                            <form action="edit.php" method="POST">
+                            <form action="./edit/edit.php" method="POST">
                                 <input type="hidden" name="myId" value="<?php print ($sorok[$i]['id']) ?>">
                                 <input type="hidden" name="myName" value="<?php print ($sorok[$i]['eljaras_neve']) ?>">
                                 <input type="hidden" name="myNote" value="<?php print ($sorok[$i]['megjegyzes']) ?>">
@@ -93,7 +93,7 @@
             </table>
         </div>
         <div class="newLine">
-        <form action="addNewLine.php" method="POST">
+        <form action="./add/addNewLine.php" method="POST">
         <label for="newEljarasNeve">Eljárás neve:</label>
         <input type="text" name="newEljarasNeve" id="newEljarasNeve">
         <label for="newMegjegyzés">Megjegyzés:</label>

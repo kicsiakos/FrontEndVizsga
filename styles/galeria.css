@@ -4,7 +4,7 @@
 }
 
 header {
-    background-image: url(./img/hatter.jpg);
+    background-image: url(../img/hatter.jpg);
     background-size: cover;
     display: flex;
     flex-flow: column wrap;
@@ -114,95 +114,95 @@ img {
 }
 
 #kep1 {
-    background-image: url(./img/galeria/399AD758-DC36-4729-912E-35247CDB22CB.jpeg);
+    background-image: url(../img/galeria/399AD758-DC36-4729-912E-35247CDB22CB.jpeg);
 }
 
 #kep2 {
-    background-image: url(./img/galeria/6EF57709-39F0-4BB2-B71C-8B1369B99AE2.jpeg);
+    background-image: url(../img/galeria/6EF57709-39F0-4BB2-B71C-8B1369B99AE2.jpeg);
 }
 
 #kep3 {
-    background-image: url(./img/galeria/C82C8AFE-44F2-4F89-9F03-E95C6DE82B30.jpeg);
+    background-image: url(../img/galeria/C82C8AFE-44F2-4F89-9F03-E95C6DE82B30.jpeg);
 }
 
 #kep4 {
-    background-image: url(./img/galeria/DE8239A3-17D1-4472-9BC5-33FD583F813B.jpeg);
+    background-image: url(../img/galeria/DE8239A3-17D1-4472-9BC5-33FD583F813B.jpeg);
 }
 
 #kep5 {
-    background-image: url(./img/galeria/IMG_6691.jpeg);
+    background-image: url(../img/galeria/IMG_6691.jpeg);
 }
 
 #kep6 {
-    background-image: url(./img/galeria/IMG_6834.jpeg);
+    background-image: url(../img/galeria/IMG_6834.jpeg);
 }
 
 #kep7 {
-    background-image: url(./img/galeria/IMG_7197.jpeg);
+    background-image: url(../img/galeria/IMG_7197.jpeg);
 }
 
 #kep8 {
-    background-image: url(./img/galeria/IMG_8058.jpeg);
+    background-image: url(../img/galeria/IMG_8058.jpeg);
 }
 
 #kep9 {
-    background-image: url(./img/galeria/IMG_8098.jpeg);
+    background-image: url(../img/galeria/IMG_8098.jpeg);
 }
 
 #kep10 {
-    background-image: url(./img/galeria/IMG_8238.jpeg);
+    background-image: url(../img/galeria/IMG_8238.jpeg);
 }
 
 #kep11 {
-    background-image: url(./img/galeria/IMG_8402.jpeg);
+    background-image: url(../img/galeria/IMG_8402.jpeg);
 }
 
 #kep12 {
-    background-image: url(./img/galeria/IMG_8682.jpeg);
+    background-image: url(../img/galeria/IMG_8682.jpeg);
 }
 
 #kep13 {
-    background-image: url(./img/galeria/IMG_8817.jpeg);
+    background-image: url(../img/galeria/IMG_8817.jpeg);
 }
 
 #kep14 {
-    background-image: url(./img/galeria/IMG_9225.jpeg);
+    background-image: url(../img/galeria/IMG_9225.jpeg);
 }
 
 #kep15 {
-    background-image: url(./img/galeria/IMG_9858.jpeg);
+    background-image: url(../img/galeria/IMG_9858.jpeg);
 }
 
 #kep16 {
-    background-image: url(./img/1.jpg);
+    background-image: url(../img/1.jpg);
 }
 
 #kep17 {
-    background-image: url(./img/2.jpg);
+    background-image: url(../img/2.jpg);
 }
 
 #kep18 {
-    background-image: url(./img/3.jpg);
+    background-image: url(../img/3.jpg);
 }
 
 #kep19 {
-    background-image: url(./img/4.jpg);
+    background-image: url(../img/4.jpg);
 }
 
 #kep20 {
-    background-image: url(./img/5.jpg);
+    background-image: url(../img/5.jpg);
 }
 
 #kep21 {
-    background-image: url(./img/6.jpg);
+    background-image: url(../img/6.jpg);
 }
 
 #kep22 {
-    background-image: url(./img/7.jpg);
+    background-image: url(../img/7.jpg);
 }
 
 #kep23 {
-    background-image: url(./img/8.jpg);
+    background-image: url(../img/8.jpg);
 }
 
 #kep1,

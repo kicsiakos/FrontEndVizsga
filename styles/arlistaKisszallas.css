@@ -35,111 +35,128 @@ nav {
     flex-flow: row wrap;
     justify-content: center;
     padding-top: 1rem;
-}
 
-.fejlec {
-    display: flex;
-    justify-content: center;
-    flex-flow: column wrap;
-    align-content: center;
-    align-items: center;
-    padding-top: 5rem;
-    font-family: 'Playfair Display';
-}
-
-.fejlec-titulus {
-    font-size: 3rem;
-    font-family: 'Sacramento', cursive;
-}
-
-.fejlec-nev {
-    font-family: 'Playfair Display';
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 4rem;
-    padding-bottom: 1rem;
 }
 
 header {
-    background-image: url(./img/hatter.jpg);
-    height: 25rem;
+    background-image: url(../img/hatter.jpg);
     background-size: cover;
     display: flex;
     flex-flow: column wrap;
-    margin-top: 1rem;
     width: 100%;
+    margin-top: 1rem;
     box-shadow: 5px 5px 20px gray;
+    margin-bottom: 2rem;
+}
+
+.hely {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.hely2 {
+    background-image: url(./img/hatter.jpg);
+    background-size: cover;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 1rem;
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display';
+    font-weight: 50;
+    font-style: italic;
 }
 
 main {
-    display: flex;
-    flex-flow: column wrap;
-    width: 90%;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-.logo {
-    background-image: url(./img/logo2.jpeg);
-    height: 15rem;
-    width: 20rem;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-}
-
-.main-content {
-    text-align: center;
-}
-
-.main-content p {
+    width: 60%;
+    text-align: left;
     font-family: 'Playfair Display';
-    font-size: 1.3rem;
-    line-height: 1.5rem;
+    margin: 0 auto;
+
+}
+
+.szektor h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: left;
+    letter-spacing: 0.2rem;
+}
+
+.szektor p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.szektor {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
     padding-bottom: 2rem;
 }
 
-footer {
+.szektor-nev {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 1rem;
+    flex-flow: column wrap;
 }
 
-.footer-szoveg {
+.szektor-ar {
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-button svg {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+h2.hely {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display';
+    font-weight: 50;
+    font-style: italic;
+}
+
+.korrekcio {
+    width: 60%;
+    height: 10rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
     align-content: center;
-    align-items: center;
-    font-family: 'Playfair Display';
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-    padding-right: 1rem;
-}
-
-.insta,
-.facebook,
-.mail,
-.telefon {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.facebook p,
-.insta p,
-.mail p,
-.telefon p {
-    font-size: 1.1rem;
-    font-family: 'Playfair Display';
-    padding-left: 0.5rem;
+    margin: 0 auto;
     font-weight: 600;
+    font-style: italic;
+    border: 1px solid gray;
+}
+
+.esztetika-arlista {
+    width: 60%;
+    text-align: left;
+    font-family: 'Playfair Display';
+    margin: 0 auto;
 }
 
 .dropdown-content {
@@ -167,42 +184,11 @@ li.dropdown {
     display: block;
 }
 
-.dropdown:hover .dropdown-button svg {
-    transform: rotate(180deg);
-    transition: 0.5s;
-}
-
-.kapcsolat {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    padding: 1rem;
-}
-
-.kapcsolat a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
 .hamburger {
     display: none;
 }
 
-.kapcsolat svg {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.profil img {
-    width: 18vw;
-    border: 2px solid black;
-    border-radius: 10vw;
-    margin-top: 1rem;
-}
-
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1180px) {
     .nav-horgonyok {
         display: none;
         flex-flow: column nowrap;
@@ -272,7 +258,7 @@ li.dropdown {
     }
 
     header {
-        height: 45vw;
+        height: 30vw;
     }
 
     nav {
@@ -281,9 +267,47 @@ li.dropdown {
         padding-top: 3vw;
     }
 
-    .logo {
-        width: 25vw;
-        height: 20vw;
+    h2.hely {
+        font-size: 7vw;
+        margin-bottom: 0vw;
+        padding-top: 0;
+    }
+
+    h2.hely2 {
+        font-size: 8vw;
+    }
+
+    .korrekcio {
+        font-size: 3vw;
+    }
+
+    .szektor p {
+        font-size: 3vw;
+    }
+
+    .szektor h2 {
+        font-size: 3vw;
+    }
+
+    .szektor {
+        flex-direction: column;
+    }
+
+    .szektor-ar {
+        justify-content: center;
+    }
+
+    .szektor-nev {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .esztetika-arlista {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
     }
 }
 
@@ -318,7 +342,7 @@ li.dropdown {
     }
 
     header {
-        height: 45vw;
+        height: 30vw;
     }
 
     .logo {
@@ -332,15 +356,19 @@ li.dropdown {
     }
 
     .main-content p {
-        font-family: 'chamberi super display regular';
+        font-family: 'Playfair Display';
         font-size: 3vw;
         line-height: 1.5rem;
         padding-bottom: 2re;
     }
 
-    .footer-szoveg {
-        font-family: 'chamberi super display regular';
-        font-size: 3vw;
-        line-height: 1.5rem;
+    h2.hely {
+        margin-bottom: 0;
+        padding-top: 0;
+        font-size: 7vw;
+    }
+
+    h2.hely2 {
+        margin-bottom: 3vw;
     }
 }

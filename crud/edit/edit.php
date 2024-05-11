@@ -1,5 +1,5 @@
 <?php session_start() ?>
-<?php require_once ('config/conf.php') ?>
+<?php require_once ('../../config/conf.php') ?>
 
 <!DOCTYPE html>
 <html lang="hu">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form action="editproc.php" method="POST">
+    <form action="./editproc.php" method="POST">
         <label for="id">ID:</label>
         <input type="number" name="id" id="id" value="<?php echo $_POST['myId'] ?>">
         <label for="eljarasNeve">Eljárás neve:</label>

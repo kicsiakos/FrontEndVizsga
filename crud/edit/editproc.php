@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ('config/conf.php');
+require_once ('../../config/conf.php');
 
 $conn = new mysqli($servername, $user, $pass, $database);
 
@@ -13,7 +13,7 @@ $sql = "UPDATE arlista  SET     eljaras_neve        = '" . $_POST['eljarasNeve']
                         WHERE   id = $id;";
 
 if (mysqli_query($conn, $sql)) {
-    header("Location: admin.php");
+    header("Location: ../admin.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
