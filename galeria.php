@@ -95,7 +95,7 @@
             </div>
         </main>
     </div>
-    <script src="galeria.js"></script>
+    <script src="./script/galeria.js"></script>
 </body>
 
 </html>

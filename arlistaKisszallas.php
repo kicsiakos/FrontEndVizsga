@@ -119,7 +119,7 @@
     </div>
     </main>
     </div>
-    <script src="app.js"></script>
+    <script src="./script/app.js"></script>
 </body>
 
 <?php $conn->close(); ?>;

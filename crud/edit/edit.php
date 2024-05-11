@@ -12,8 +12,7 @@
 
 <body>
     <form action="./editproc.php" method="POST">
-        <label for="id">ID:</label>
-        <input type="number" name="id" id="id" value="<?php echo $_POST['myId'] ?>">
+        <input type="hidden" name="id" id="id" value="<?php echo $_POST['myId'] ?>">
         <label for="eljarasNeve">Eljárás neve:</label>
         <input type="text" name="eljarasNeve" id="eljarasNeve" value="<?php echo $_POST['myName'] ?>">
         <label for="megjegyzés">Megjegyzés:</label>
