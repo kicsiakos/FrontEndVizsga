@@ -4,17 +4,16 @@ class DeleteOOP
 {
 
     private $conn;
+    private $servername = "localhost";
+    private $user = "root";
+    private $pass = "";
+    private $database = "phpvizsga";
 
 
     function __construct()
     {
-        $servername = "localhost";
-        $user = "root";
-        $pass = "";
-        $database = "phpvizsga";
-
         try {
-            $this->conn = new mysqli($servername, $user, $pass, $database);
+            $this->conn = new mysqli($this->servername, $this->user, $this->pass, $this->database);
         } catch (exception $ex) {
             throw new Exception("Hibaüzenet : " . $this->conn->connect_error);
         }

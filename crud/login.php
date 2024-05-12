@@ -19,7 +19,7 @@ if (isset($_SESSION['id'])) {
 
 <body>
     <div class="form">
-        <form method="POST" action="loginproc.php">
+        <form method="POST" action="loginprocOOP.php">
             <label for="username">Felhasználónév</label>
             <input type="email" name="username" id="username">
             <label for="password">Jelszó</label>
