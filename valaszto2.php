@@ -17,9 +17,9 @@
 <body>
     <div class="content">
         <main>
-            <a href="interlash.html">Szemöldöktetoválás</a>
-            <a href="aquarellelips.html">Ajaktetoválás</a>
-            <a href="softliner.html">Szemhéjtetoválás</a>
+            <a href="interlash.php">Szemöldöktetoválás</a>
+            <a href="aquarellelips.php">Ajaktetoválás</a>
+            <a href="softliner.php">Szemhéjtetoválás</a>
         </main>
     </div>
 </body>

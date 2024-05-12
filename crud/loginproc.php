@@ -35,7 +35,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 $myFile = fopen("errorLog.txt", "a") or die("Nem lehet megnyitni a file-t!");
                 fwrite($myFile, $errorMessage);
                 fclose($myFile);
-                $_SESSION['error'] = "Helytelen jelszó!";
+                $_SESSION['error'] = "Helytelen e-mail cím vagy jelszó!";
                 header('Location: login.php');
             }
         } else {
@@ -43,7 +43,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $myFile = fopen("errorLog.txt", "a") or die("Nem lehet megnyitni a file-t!");
             fwrite($myFile, $errorMessage);
             fclose($myFile);
-            $_SESSION['error'] = "Helytelen e-mail cím!";
+            $_SESSION['error'] = "Helytelen e-mail cím vagy jelszó!";
             header('Location: login.php');
         }
     } else {

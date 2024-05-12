@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form action="./editproc.php" method="POST">
+    <form action="./editprocOOP.php" method="POST">
         <input type="hidden" name="id" id="id" value="<?php echo $_POST['myId'] ?>">
         <label for="eljarasNeve">Eljárás neve:</label>
         <input type="text" name="eljarasNeve" id="eljarasNeve" value="<?php echo $_POST['myName'] ?>">

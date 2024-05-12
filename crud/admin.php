@@ -1,5 +1,6 @@
 <?php session_start() ?>
 <?php require_once ('../config/conf.php') ?>
+
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -59,7 +60,10 @@
                         <td><?php print ($sorok[$i]['eljaras_mod']) ?></td>
 
                         <td>
-                            <form action="./delete/delete.php" method="POST">
+
+                            <!-- ÚJ SOR TÖRLÉSE OOP-BEN MEGÍRVA -->
+
+                            <form action="./delete/deleteOOP.php" method="POST">
                                 <input type="hidden" name="myId" value="<?php print ($sorok[$i]['id']) ?>">
                                 <button type="submit">TÖRLÉS
                                     <svg class="delete" xmlns="http://www.w3.org/2000/svg" width="10" height="10"
@@ -68,9 +72,15 @@
                                             d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
                                     </svg></button>
                             </form>
+
+                            <!-- ÚJ SOR TÖRLÉSÉNEK VÉGE -->
+
                         </td>
 
                         <td>
+
+                            <!-- ÚJ SOR MÓDOSÍTÁSA OOP-BEN MEGÍRVA -->
+
                             <form action="./edit/edit.php" method="POST">
                                 <input type="hidden" name="myId" value="<?php print ($sorok[$i]['id']) ?>">
                                 <input type="hidden" name="myName" value="<?php print ($sorok[$i]['eljaras_neve']) ?>">
@@ -83,6 +93,9 @@
                                 ?>
                                 <button>MÓDOSÍTÁS</button>
                             </form>
+
+                            <!-- ÚJ SOR MÓDOSÍTÁSÁNAK VÉGE -->
+
                         </td>
                     <?php } ?>
 
@@ -92,24 +105,29 @@
 
             </table>
         </div>
+
+        <!-- ÚJ SOR HOZZÁADÁSA OOP-BEN MEGÍRVA -->
+
         <div class="newLine">
-        <form action="./add/addNewLine.php" method="POST">
-        <label for="newEljarasNeve">Eljárás neve:</label>
-        <input type="text" name="newEljarasNeve" id="newEljarasNeve">
-        <label for="newMegjegyzés">Megjegyzés:</label>
-        <input type="text" name="newMegjegyzés" id="newMegjegyzés">
-        <label for="newEljarasHelyszine">Eljárás helyszíne:</label>
-        <input type="text" name="newEljarasHelyszine" id="newEljarasHelyszine">
-        <label for="newEljarasAra">Eljárás Ára:</label>
-        <input type="text" name="newEljarasAra" id="newEljarasAra">
-        <label for="newEsztetikaTetovalas">Esztétika/Tetoválás:</label>
-        <select name="newEsztetikaTetovalas" id="newEsztetikaTetovalas">  
-            <option value="Esztétika">Esztétika</option>
-            <option value="Tetoválás">Tetoválás</option>
-        </select>
-        <button>ÚJ SOR HOZZÁADÁSA</button>
-    </form>
+            <form action="./add/addNewLineOOP.php" method="POST">
+                <label for="newEljarasNeve">Eljárás neve:</label>
+                <input type="text" name="newEljarasNeve" id="newEljarasNeve">
+                <label for="newMegjegyzés">Megjegyzés:</label>
+                <input type="text" name="newMegjegyzés" id="newMegjegyzés">
+                <label for="newEljarasHelyszine">Eljárás helyszíne:</label>
+                <input type="text" name="newEljarasHelyszine" id="newEljarasHelyszine">
+                <label for="newEljarasAra">Eljárás Ára:</label>
+                <input type="text" name="newEljarasAra" id="newEljarasAra">
+                <label for="newEsztetikaTetovalas">Esztétika/Tetoválás:</label>
+                <select name="newEsztetikaTetovalas" id="newEsztetikaTetovalas">
+                    <option value="Esztétika">Esztétika</option>
+                    <option value="Tetoválás">Tetoválás</option>
+                </select>
+                <button>ÚJ SOR HOZZÁADÁSA</button>
+            </form>
         </div>
+
+        <!-- ÚJ SOR HOZZÁADÁSÁNAK VÉGE -->
 
         <div class="table">
             <table>
