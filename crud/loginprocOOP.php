@@ -18,10 +18,10 @@ class LoginprocOOP
 
         if (isset($_POST['username']) && isset($_POST['password'])) {
             if (filter_var($_POST['username'], FILTER_VALIDATE_EMAIL)) {
-                $username = $_POST['username'];
+                $this->username = $_POST['username'];
             }
 
-            $password = $_POST['password'];
+            $this->password = $_POST['password'];
 
             $conn = new mysqli($this->servername, $this->user, $this->pass, $this->database);
             if (!$conn) {
@@ -31,12 +31,12 @@ class LoginprocOOP
                 fclose($myFile);
                 header('Location: login.php');
             }
-            $sql = "SELECT id, email, jelszo FROM felhasznalok WHERE email = '" . $username . "'";
+            $sql = "SELECT id, email, jelszo FROM felhasznalok WHERE email = '" . $this->username . "'";
             $result = $conn->query($sql);
             if ($result) {
                 if ($result->num_rows === 1) {
                     $row = $result->fetch_assoc();
-                    if (password_verify($password . $this->salt, $row['jelszo'])) {
+                    if (password_verify($this->password . $this->salt, $row['jelszo'])) {
 
                         $_SESSION['id'] = $row['id'];
                         $_SESSION['logindate'] = date('YYYY.MM.DD');
@@ -51,7 +51,7 @@ class LoginprocOOP
                         header('Location: login.php');
                     }
                 } else {
-                    $errorMessage = date("Y.m.d H:i:s") . " E-mail cím helytelen ($username) " . "IP: " . $_SERVER['REMOTE_ADDR'] . "\n";
+                    $errorMessage = date("Y.m.d H:i:s") . " E-mail cím helytelen ($this->username) " . "IP: " . $_SERVER['REMOTE_ADDR'] . "\n";
                     $myFile = fopen("errorLog.txt", "a") or die("Nem lehet megnyitni a file-t!");
                     fwrite($myFile, $errorMessage);
                     fclose($myFile);
