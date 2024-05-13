@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `arlista` (
   `eljaras_ara` varchar(255) DEFAULT NULL,
   `eljaras_mod` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Tábla adatainak mentése phpvizsga.arlista: ~14 rows (hozzávetőleg)
 INSERT INTO `arlista` (`id`, `eljaras_neve`, `megjegyzes`, `eljaras_helyszine`, `eljaras_ara`, `eljaras_mod`) VALUES
@@ -68,15 +68,17 @@ CREATE TABLE IF NOT EXISTS `foglalasok` (
   `emailcim` varchar(255) DEFAULT NULL,
   `megjegyzes` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Tábla adatainak mentése phpvizsga.foglalasok: ~5 rows (hozzávetőleg)
+-- Tábla adatainak mentése phpvizsga.foglalasok: ~7 rows (hozzávetőleg)
 INSERT INTO `foglalasok` (`id`, `vezeteknev`, `keresztnev`, `telefonszam`, `emailcim`, `megjegyzes`) VALUES
 	(1, 'Kiss', 'Ákos', '06302480795', 'kissakos23@gmail.com', 'Hajvágás.'),
 	(2, 'Labanc', 'Ágnes', '06202358632', 'dikk@szoszo.hu', 'Hajmosás.'),
 	(5, 'Labanc', 'Aladár', '06308489898', 'leo@dikk.hu', 'Pajesz mosás.'),
-	(6, 'Kerekes', 'Aladár', '06302480795', 'kissakos23@gmail.com', 'dwqdqwdqd'),
-	(7, 'Kerekes', 'Aladár', '06302480795', 'kissakos23@gmail.com', 'dwqdqwdqd');
+	(10, 'Kiss', 'Rodolfó', '06303689783', 'sandorattila20@gmail.com', 'sddasd'),
+	(11, 'Kiss', 'Rodolfó', '06202358632', 'dikk@szoszo.hu', 'sssss'),
+	(12, 'Tóth', 'Mária', '06704568978', 'marcsi@gmail.com', 'mosás.'),
+	(13, 'Kerekes', 'Dezső', '06302480795', 'kissakos23@gmail.com', 'Hátvakarás');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
