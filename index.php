@@ -1,6 +1,6 @@
-<?php 
-    session_start()
-?>
+<?php
+session_start()
+    ?>
 
 <!DOCTYPE html>
 <html lang="hu">
@@ -22,7 +22,7 @@
     <div class="content">
         <header>
             <nav>
-                <?php require_once('view/nav.php') ?>
+                <?php require_once ('view/nav.php') ?>
             </nav>
             <div class="fejlec">
                 <p class="fejlec-nev">Tóth-Horti Vanda</p>
@@ -102,7 +102,7 @@
             </footer>
         </main>
     </div>
-    <script src="./script/app.js"></script>
+    <script src="./script/main.js" type="module"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ('../config/conf.php');
+require_once('../config/conf.php');
 
 
 class LoginprocOOP
@@ -36,7 +36,7 @@ class LoginprocOOP
             if ($result) {
                 if ($result->num_rows === 1) {
                     $row = $result->fetch_assoc();
-                    if (password_verify($this->password . $this->salt, $row['jelszo'])) {
+                    if (password_verify($this->password, $row['jelszo'])) {
 
                         $_SESSION['id'] = $row['id'];
                         $_SESSION['logindate'] = date('YYYY.MM.DD');

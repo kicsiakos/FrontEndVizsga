@@ -1,0 +1,40 @@
+{
+
+    "Vanda": {
+        "nyitvatartas": [{
+            "nap": "Hétfő",
+            "napIndex": 1,
+            "tol": "8",
+            "ig": "16"
+        }, {
+            "nap": "Szerda",
+            "napIndex": 3,
+            "tol": "8",
+            "ig": "16"
+        }, {
+            "nap": "Péntek",
+            "napIndex": 5,
+            "tol": "8",
+            "ig": "16"
+        }]
+    },
+    "Olga": {
+        "nyitvatartas": [{
+            "nap": "Kedd",
+            "napIndex": 2,
+            "tol": "8",
+            "ig": "16"
+        }, {
+            "nap": "Csütörtök",
+            "napIndex": 4,
+            "tol": "8",
+            "ig": "16"
+        }, {
+            "nap": "Szombat",
+            "napIndex": 6,
+            "tol": "8",
+            "ig": "12"
+        }]
+    }
+
+}
