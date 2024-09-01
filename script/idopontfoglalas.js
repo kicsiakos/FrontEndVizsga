@@ -17,6 +17,7 @@ class Kozmetikus {
     fodraszId;
     selectedUser;
     json;
+    daySelectorButton;
 
 
     constructor(nev, titulus, bemutatkozas, kepSrc, parent) {
@@ -72,13 +73,40 @@ class Kozmetikus {
 
                 }
 
-                const selectedVal = document.querySelector('#idopont').value;
+                const selected = document.querySelector('#idopont');
+
+                selected.addEventListener('change', function () {
+
+                    console.log('alma');
+                    document.querySelector('.foglalas-idopontok').innerHTML = '';
+
+                    for (const idopontok of myObj.Olga.nyitvatartas) {
+
+                        console.log(idopontok.nap);
+
+                        if (idopontok.napIndex == selected.value) {
+
+                            for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
+
+                                console.log(i);
+
+                                document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}">${i}:00</button></div>`
+
+                            }
+
+                        }
+
+
+
+                    }
+
+                })
 
                 for (const idopontok of myObj.Olga.nyitvatartas) {
 
                     console.log(idopontok.nap);
 
-                    if (idopontok.napIndex == selectedVal) {
+                    if (idopontok.napIndex == selected.value) {
 
                         for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
 
@@ -100,21 +128,77 @@ class Kozmetikus {
                 let myObj = await request.json();
                 console.log(myObj);
 
-
                 this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
-                            <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
-                            <div class="foglalas-datum"></div>
-                            <div class="foglalas-idopontok"></div>
-                            <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
+                                    <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
+                                    <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
+                                    <div class="foglalas-idopontok"></div>
+                                    <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
+
 
                 this.parentElement.innerHTML = "";
                 this.parentElement.innerHTML = this.foglalasTpl;
+
+                for (const napok of myObj.Vanda.nyitvatartas) {
+                    console.log(napok.nap);
+                    document.querySelector('#idopont').innerHTML += `<option value="${napok.napIndex}">${napok.nap}</option>`
+
+                }
+
+                const selected = document.querySelector('#idopont');
+
+                selected.addEventListener('change', function () {
+
+                    console.log('alma');
+                    document.querySelector('.foglalas-idopontok').innerHTML = '';
+
+                    for (const idopontok of myObj.Vanda.nyitvatartas) {
+
+                        console.log(idopontok.nap);
+
+                        if (idopontok.napIndex == selected.value) {
+
+                            for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
+
+                                console.log(i);
+
+                                document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}">${i}:00</button></div>`
+
+                            }
+
+                        }
+
+
+
+                    }
+
+                })
+
+                for (const idopontok of myObj.Vanda.nyitvatartas) {
+
+                    console.log(idopontok.nap);
+
+                    if (idopontok.napIndex == selected.value) {
+
+                        for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
+
+                            console.log(i);
+
+                            document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}">${i}:00</button></div>`
+
+                        }
+
+                    }
+
+
+
+                }
             }
 
         })
 
         this.parentElement.appendChild(this.element);
     }
+
 
     async foglalas() {
 

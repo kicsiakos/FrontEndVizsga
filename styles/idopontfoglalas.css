@@ -56,7 +56,7 @@ body {
 .main {
     display: flex;
     justify-content: space-evenly;
-    height: 55vw;
+    height: 60vw;
     width: 100vw;
     flex-flow: row wrap;
 }
@@ -178,6 +178,7 @@ li.dropdown {
     position: relative;
     line-height: 4vw;
     padding-bottom: 3vw;
+    box-shadow: #546213 10px 10px 20px 1px;
 
 }
 
@@ -195,11 +196,14 @@ li.dropdown {
     position: relative;
     line-height: 4vw;
     padding-bottom: 3vw;
+    box-shadow: #546213 5px 5px 15px 1px;
+
+    
 }
 
 .fodrasz-img,
 .user-img {
-    border: 1px solid yellow;
+    border: 3px solid yellow;
     border-radius: 50%;
     width: 15vw;
     height: 15vw;
@@ -225,6 +229,8 @@ li.dropdown {
     align-items: center;
     border-radius: 0.6rem;
     margin-top: 1vw;
+    border: 2px solid yellow;
+    box-shadow: #546213 5px 5px 15px 1px;
 }
 
 .fodrasz-nev {
@@ -254,6 +260,39 @@ li.dropdown {
     background-position: 60%;
     background-size: 230%;
     background-position-y: 3%;
+}
+
+.foglalas-idopontok {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 50vw;
+    height: 15vw;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+
+}
+
+.foglalas-idopontok button {
+    width: 8vw;
+    height: 5vw;
+    background-color: beige;
+    font-weight: bold;
+    border: 2px solid yellow;
+    border-radius: 3vw;
+    box-shadow: #546213 5px 5px 15px 1px;
+}
+
+#idopont {
+    width: 15vw;
+    height: 5vw;
+    text-align: center;
+    font-weight: bold;
+    background-color: beige;
+    border-radius: 4vw;
+    border: 2px solid yellow;
+    box-shadow: #546213 5px 5px 15px 1px;
 }
 
 
