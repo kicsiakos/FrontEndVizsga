@@ -75,55 +75,37 @@ class Kozmetikus {
 
         const idokpontok = document.querySelector('.foglalas-idopontok');
 
-        idokpontok.querySelectorAll('button').forEach(v => v.addEventListener('click', () => {
+        idokpontok.querySelectorAll('button').forEach(v => v.addEventListener('click', function () {
 
-            if (!v.classList.contains('selected')) {
-                v.classList.add('selected');
-                this.selectedDay = v;
+            let myitem = idokpontok.querySelector('.selected');
+
+            if (myitem) {
+                myitem.classList.remove('selected');
             }
 
-            /* if (this.selectedDay) {
-                v.classList.remove('selected');
-            } */
-
-            if (this.selectedDay != v) {
-                this.selectedDay.classList.remove('selected');
-                v.classList.add('selected');
-            }
-
-            /* this.selectedDay = idokpontok.querySelector('.selected');
-
-            if (this.selectedDay) {
-
-                this.selectedDay.classList.remove('selected');
-
-            }
-            if (this.selectedDay != this) {
-
-                v.classList.add('selected');
-                this.selectedDay = v;
-
-            } */
-
-            console.log(this.selectedDay);
-            return this.selectedDay;
+            this.classList.add('selected');
 
         }))
 
-        let guestName = document.querySelector('#guest-name').value;
-        let guestPhone = document.querySelector('#guest-phone').value;
 
         this.bookBtn = document.querySelector('#foglalas-button');
 
         this.bookBtn.addEventListener('click', function () {
 
+            let guestName = document.querySelector('#guest-name').value;
+            let guestPhone = document.querySelector('#guest-phone').value;
+            let guestTime = document.querySelector('.selected').value;
+
             const xhttp = new XMLHttpRequest();
             xhttp.open("POST", "../idopontfoglalasOOP.php");
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.onload = function () {
-                console.log(this.responseText);
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert('SIKERES FOGLALÁS')
+                }
             }
-            xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${this.selectedDay.value}`);
+            xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${guestTime}`);
+            console.log('katt');
 
         })
 

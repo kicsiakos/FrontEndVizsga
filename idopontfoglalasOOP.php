@@ -1,5 +1,4 @@
 <?php
-require_once('config/conf.php');
 
 class IdopontfoglalasOOP
 {
@@ -31,14 +30,14 @@ class IdopontfoglalasOOP
 
         if (
             isset($_POST["nev"]) &&
-            isset($_POST["telefon"]) &&
+            isset($_POST["telefonszam"]) &&
             isset($_POST["idopont"])
         ) {
             $nev = $this->test_input($_POST["nev"]);
-            $telefonSzam = $this->test_input($_POST["telefon"]);
+            $telefonSzam = $this->test_input($_POST["telefonszam"]);
             $idopont = $this->test_input($_POST["idopont"]);
-            
-            $sql = "INSERT INTO foglalasok (vezeteknev, keresztnev, telefonszam, emailcim, megjegyzes)
+
+            $sql = "INSERT INTO foglalasok (nev, telefonszam, idopont)
             VALUES ('$nev', '$telefonSzam', '$idopont')";
         }
 
