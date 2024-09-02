@@ -1,5 +1,5 @@
 <?php
-require_once ('config/conf.php');
+require_once('config/conf.php');
 
 class IdopontfoglalasOOP
 {
@@ -9,8 +9,6 @@ class IdopontfoglalasOOP
     private $user = "root";
     private $pass = "";
     private $database = "phpvizsga";
-
-    private $emailErr = '';
     function __construct()
     {
         try {
@@ -32,22 +30,16 @@ class IdopontfoglalasOOP
     {
 
         if (
-            isset($_POST["vezetek-nev"]) &&
-            isset($_POST["kereszt-nev"]) &&
+            isset($_POST["nev"]) &&
             isset($_POST["telefon"]) &&
-            isset($_POST["email"]) &&
-            isset($_POST["megjegyzes"])
+            isset($_POST["idopont"])
         ) {
-            $vezetekNev = $this->test_input($_POST["vezetek-nev"]);
-            $keresztNev = $this->test_input($_POST["kereszt-nev"]);
+            $nev = $this->test_input($_POST["nev"]);
             $telefonSzam = $this->test_input($_POST["telefon"]);
-            $emailCim = $this->test_input($_POST["email"]);
-            if (!filter_var($emailCim, FILTER_VALIDATE_EMAIL)) {
-                $this->emailErr = "Helytelen e-mail formátum!";
-            }
-            $megjegyzes = htmlspecialchars($_POST["megjegyzes"]);
+            $idopont = $this->test_input($_POST["idopont"]);
+            
             $sql = "INSERT INTO foglalasok (vezeteknev, keresztnev, telefonszam, emailcim, megjegyzes)
-            VALUES ('$vezetekNev', '$keresztNev', '$telefonSzam', '$emailCim', '$megjegyzes')";
+            VALUES ('$nev', '$telefonSzam', '$idopont')";
         }
 
         if (mysqli_query($this->conn, $sql)) {

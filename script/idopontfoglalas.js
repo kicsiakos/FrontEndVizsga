@@ -14,19 +14,18 @@ class Kozmetikus {
     tpl;
     foglalasTpl;
     foglalasBtn;
-    fodraszId;
-    selectedUser;
-    json;
-    daySelectorButton;
+    selectedDay;
+    selectedDate;
+    bookBtn;
 
 
     constructor(nev, titulus, bemutatkozas, kepSrc, parent) {
+
         this.nev = nev;
         this.titulus = titulus;
         this.bemutatkozas = bemutatkozas;
         this.kepSrc = kepSrc;
         this.parentElement = getElement(parent);
-
         this.tpl = `<div class="fodrasz-div" id='${this.nev}'>
                     <div class="fodrasz-img" style="background-image: url(${this.kepSrc});"></div>
                     <div class="fodrasz-nev">${this.nev}</div>
@@ -36,254 +35,210 @@ class Kozmetikus {
                 </div>`;
 
         this.build();
-        /*         this.foglalas();
-         */
-
 
     }
 
     build() {
+
         this.element = evalTpl(this.tpl);
 
         this.foglalasBtn = this.element.querySelector('.fodraszBtn');
 
         this.foglalasBtn.addEventListener('click', async () => {
-            /*             this.foglalas();
-                        this.fodraszId = this.element.id;
-                        console.log(this.fodraszId); */
 
             if (this.element.id === 'Olga') {
-                let request = await fetch('./db/foglalasok.JSON');
-                let myObj = await request.json();
-                console.log(myObj);
-
-                this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
-                                    <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
-                                    <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
-                                    <div class="foglalas-idopontok"></div>
-                                    <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
-
-
-                this.parentElement.innerHTML = "";
-                this.parentElement.innerHTML = this.foglalasTpl;
-
-                for (const napok of myObj.Olga.nyitvatartas) {
-                    console.log(napok.nap);
-                    document.querySelector('#idopont').innerHTML += `<option value="${napok.napIndex}">${napok.nap}</option>`
-
-                }
-
-                const selected = document.querySelector('#idopont');
-
-                selected.addEventListener('change', function () {
-
-                    console.log('alma');
-                    document.querySelector('.foglalas-idopontok').innerHTML = '';
-
-                    for (const idopontok of myObj.Olga.nyitvatartas) {
-
-                        console.log(idopontok.nap);
-
-                        if (idopontok.napIndex == selected.value) {
-
-                            for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
-
-                                console.log(i);
-
-                                document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}">${i}:00</button></div>`
-
-                            }
-
-                        }
-
-
-
-                    }
-
-                })
-
-                for (const idopontok of myObj.Olga.nyitvatartas) {
-
-                    console.log(idopontok.nap);
-
-                    if (idopontok.napIndex == selected.value) {
-
-                        for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
-
-                            console.log(i);
-
-                            document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}">${i}:00</button></div>`
-
-                        }
-
-                    }
-
-
-
-                }
+                this.renderTimes('Olga')
             }
 
             if (this.element.id === 'Vanda') {
-                let request = await fetch('./db/foglalasok.JSON');
-                let myObj = await request.json();
-                console.log(myObj);
-
-                this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
-                                    <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
-                                    <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
-                                    <div class="foglalas-idopontok"></div>
-                                    <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
-
-
-                this.parentElement.innerHTML = "";
-                this.parentElement.innerHTML = this.foglalasTpl;
-
-                for (const napok of myObj.Vanda.nyitvatartas) {
-                    console.log(napok.nap);
-                    document.querySelector('#idopont').innerHTML += `<option value="${napok.napIndex}">${napok.nap}</option>`
-
-                }
-
-                const selected = document.querySelector('#idopont');
-
-                selected.addEventListener('change', function () {
-
-                    console.log('alma');
-                    document.querySelector('.foglalas-idopontok').innerHTML = '';
-
-                    for (const idopontok of myObj.Vanda.nyitvatartas) {
-
-                        console.log(idopontok.nap);
-
-                        if (idopontok.napIndex == selected.value) {
-
-                            for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
-
-                                console.log(i);
-
-                                document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}">${i}:00</button></div>`
-
-                            }
-
-                        }
-
-
-
-                    }
-
-                })
-
-                for (const idopontok of myObj.Vanda.nyitvatartas) {
-
-                    console.log(idopontok.nap);
-
-                    if (idopontok.napIndex == selected.value) {
-
-                        for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
-
-                            console.log(i);
-
-                            document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}">${i}:00</button></div>`
-
-                        }
-
-                    }
-
-
-
-                }
+                this.renderTimes('Vanda');
             }
-
         })
 
         this.parentElement.appendChild(this.element);
-    }
-
-
-    async foglalas() {
-
-        /* const xhr = new XMLHttpRequest();
-
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-
-                const response = JSON.parse(this.responseText);
-                console.log(response);
-
-            }
-
-        }
-        xhr.open("GET", './db/foglalasok.JSON');
-        xhr.send(); */
-
-        let request = await fetch('./db/foglalasok.JSON');
-        let myObj = await request.json();
-        console.log(myObj);
-
-
-        this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
-                            <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
-                            <div class="foglalas-datum"><select name="idopont" id="idopont"><option value=""></option></select></div>
-                            <div class="foglalas-idopontok">${myObj.Olga.nyitvatartas[0].nap}</div>
-                            <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
-
-        this.parentElement.innerHTML = "";
-        this.parentElement.innerHTML = this.foglalasTpl;
 
     }
 
     bemutatkozasFilter(text) {
-        return `
-            ${
-                text.substr(0, 150)
-            }...`
-    }
 
-
-
-
-}
-
-
-class Foglalas extends Kozmetikus {
-
-    today;
-    todayStamp;
-    json;
-    myObj;
-
-    constructor() {
-
-        super();
-        this.today = new Date();
-        this.todayStamp = this.today.getTime();
-
-        this.myObj = [{
-            neve: "Vanda",
-            szabadIdopontok: [{
-                nap: "Hétfő",
-                napIndex: 1,
-                tol: "10",
-                ig: "15:30"
-            }, {
-                nap: "Szerda",
-                napIndex: 3,
-                tol: "9",
-                ig: "14:30"
-            }, {
-                nap: "Szombat",
-                napIndex: 6,
-                tol: "10",
-                ig: "13"
-            }]
-        }]
-
-        this.generate(this.myObj)
+        return `${text.substr(0, 150)}...`
 
     }
 
-    generate(obj) {
-        this.json = JSON.stringify(obj)
+    book() {
+
+
+
+    }
+
+    select() {
+
+        const idokpontok = document.querySelector('.foglalas-idopontok');
+
+        idokpontok.querySelectorAll('button').forEach(v => v.addEventListener('click', () => {
+
+            if (!v.classList.contains('selected')) {
+                v.classList.add('selected');
+                this.selectedDay = v;
+            }
+
+            /* if (this.selectedDay) {
+                v.classList.remove('selected');
+            } */
+
+            if (this.selectedDay != v) {
+                this.selectedDay.classList.remove('selected');
+                v.classList.add('selected');
+            }
+
+            /* this.selectedDay = idokpontok.querySelector('.selected');
+
+            if (this.selectedDay) {
+
+                this.selectedDay.classList.remove('selected');
+
+            }
+            if (this.selectedDay != this) {
+
+                v.classList.add('selected');
+                this.selectedDay = v;
+
+            } */
+
+            console.log(this.selectedDay);
+            return this.selectedDay;
+
+        }))
+
+        let guestName = document.querySelector('#guest-name').value;
+        let guestPhone = document.querySelector('#guest-phone').value;
+
+        this.bookBtn = document.querySelector('#foglalas-button');
+
+        this.bookBtn.addEventListener('click', function () {
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "../idopontfoglalasOOP.php");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.onload = function () {
+                console.log(this.responseText);
+            }
+            xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${this.selectedDay.value}`);
+
+        })
+
+    }
+
+    async renderTimes(user) {
+
+        if (this.element.id === user) {
+
+            let request = await fetch('./db/foglalasok.JSON');
+            let myObj = await request.json();
+
+            this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
+                                <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
+                                <div class="guest-details"><div><input type="text" id="guest-name" placeholder="Név"></div>
+                                <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div></div>
+                                <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
+                                <div class="foglalas-idopontok"></div>
+                                <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
+
+            this.parentElement.innerHTML = "";
+            this.parentElement.innerHTML = this.foglalasTpl;
+
+
+
+            if (user == 'Vanda') {
+
+                for (const napok of myObj.Vanda.nyitvatartas) {
+
+                    document.querySelector('#idopont').innerHTML += `<option value="${napok.napIndex}">${napok.nap}</option>`
+
+                }
+            }
+
+            if (user == 'Olga') {
+
+                for (const napok of myObj.Olga.nyitvatartas) {
+
+                    document.querySelector('#idopont').innerHTML += `<option value="${napok.napIndex}">${napok.nap}</option>`
+
+                }
+            }
+
+            const selected = document.querySelector('#idopont');
+
+            selected.addEventListener('change', function () {
+
+                document.querySelector('.foglalas-idopontok').innerHTML = '';
+
+                if (user == 'Vanda') {
+
+                    for (const idopontok of myObj.Vanda.nyitvatartas) {
+
+                        if (idopontok.napIndex == selected.value) {
+
+                            for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
+
+                                document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${i}:00">${i}:00</button></div>`
+
+                            }
+                        }
+                    }
+
+                }
+
+                if (user == 'Olga') {
+
+                    for (const idopontok of myObj.Olga.nyitvatartas) {
+
+                        if (idopontok.napIndex == selected.value) {
+
+                            for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
+
+                                document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${i}:00">${i}:00</button></div>`
+
+                            }
+                        }
+                    }
+
+                }
+            })
+
+            if (user == 'Vanda') {
+
+                for (const idopontok of myObj.Vanda.nyitvatartas) {
+
+                    if (idopontok.napIndex == selected.value) {
+
+                        for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
+
+                            document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${i}:00">${i}:00</button></div>`
+
+                        }
+                    }
+                }
+            }
+
+            if (user == 'Olga') {
+
+                for (const idopontok of myObj.Olga.nyitvatartas) {
+
+                    if (idopontok.napIndex == selected.value) {
+
+                        for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
+
+                            document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${i}:00">${i}:00</button></div>`
+
+                        }
+                    }
+                }
+            }
+        }
+
+        this.select();
+
     }
 
 }

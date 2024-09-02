@@ -269,8 +269,8 @@ li.dropdown {
     height: 15vw;
     text-align: center;
     align-items: center;
-    margin-bottom: 3vw;
-    margin-top: 3vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
 
 }
 
@@ -284,6 +284,10 @@ li.dropdown {
     box-shadow: #546213 5px 5px 15px 1px;
 }
 
+.foglalas-idopontok button:hover {
+    background-color: #ece28d;
+}
+
 #idopont {
     width: 15vw;
     height: 5vw;
@@ -293,6 +297,27 @@ li.dropdown {
     border-radius: 4vw;
     border: 2px solid yellow;
     box-shadow: #546213 5px 5px 15px 1px;
+}
+
+.selected {
+    transform: scale(1.5);
+    color: orange;
+}
+
+#guest-name,
+#guest-phone {
+    font-size: 2vw;
+    width: 90%;
+}
+
+.guest-details {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 2vw;
+}
+
+.guest-details div {
+    align-self: center;
 }
 
 
