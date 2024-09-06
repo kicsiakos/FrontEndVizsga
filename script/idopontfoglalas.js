@@ -17,6 +17,7 @@ class Kozmetikus {
     selectedDay;
     selectedDate;
     bookBtn;
+    napok = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];
 
 
     constructor(nev, titulus, bemutatkozas, kepSrc, parent) {
@@ -65,15 +66,24 @@ class Kozmetikus {
 
     }
 
-    date(element) {
+    date(element, dayNum, ...dayIndex) {
 
-        const today = new Date();
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        let day = today.getDate();
 
+        for (let i = 0; i < dayNum; i++) {
+
+            let newDate = new Date(year, month, day + i);
+            let newDateDayIndex = newDate.getDay();
+
+            dayIndex.forEach(v => {
+                if (newDateDayIndex == v) {
+                    element.innerHTML += `<option value="${newDateDayIndex}">${year}-${month+1}-${day+i}</option>`
+                }
+            })
         }
-
-
     }
 
     select() {
@@ -102,8 +112,8 @@ class Kozmetikus {
 
         this.bookBtn.addEventListener('click', function () {
 
-            let guestName = document.querySelector('#guest-name').value;
-            let guestPhone = document.querySelector('#guest-phone').value;
+            /*  let guestName = document.querySelector('#guest-name').value;
+             let guestPhone = document.querySelector('#guest-phone').value; */
             let guestTime = document.querySelector('.selected').value;
             let user = document.querySelector('.foglalas-div').id;
             let date = document.querySelector('#idopont').selectedOptions[0].innerHTML;
@@ -117,10 +127,8 @@ class Kozmetikus {
                 }
             }
             xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${guestTime}&user=${user}&nap=${date}`);
-            console.log('katt');
 
         })
-
     }
 
     async renderTimes(user) {
@@ -130,48 +138,53 @@ class Kozmetikus {
             let request = await fetch('./db/foglalasok.JSON');
             let myObj = await request.json();
 
-            this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
-                                            <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
-                                            <div class="guest-details"><div><input type="text" id="guest-name" placeholder="Név"></div>
-                                            <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div></div>
-                                            <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
-                                            <div class="foglalas-idopontok"></div>
-                                            <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
+            this.foglalasTpl =
+                /* `<div class="foglalas-div" id='${this.nev}'>
+                                                           <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
+                                                           <div class="guest-details"><div><input type="text" id="guest-name" placeholder="Név"></div>
+                                                           <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div></div>
+                                                           <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
+                                                           <div class="foglalas-idopontok"></div>
+                                                           <div><button id="foglalas-button">Lefoglalom</button></div></div>`; */
 
-            /* this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
+                this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
                                 <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
                                 <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
-                                <div class="datum-display">HÉTFŐ</div>
+                                <div class="datum-display"></div>
                                 <div class="foglalas-idopontok"></div>
-                                <div><button id="foglalas-button">Lefoglalom</button></div></div>`; */
+                                <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
 
             this.parentElement.innerHTML = "";
             this.parentElement.innerHTML = this.foglalasTpl;
             this.bookBtn = document.querySelector('#foglalas-button');
             this.bookBtn.onclick = this.foglalas();
 
+            const selected = document.querySelector('#idopont');
 
 
 
             if (user == 'Vanda') {
 
-                for (const napok of myObj.Vanda.nyitvatartas) {
+                this.date(document.querySelector('#idopont'), 20, 1, 3, 5)
+
+                /* for (const napok of myObj.Vanda.nyitvatartas) {
 
                     document.querySelector('#idopont').innerHTML += `<option value="${napok.napIndex}">${napok.nap}</option>`
 
-                }
+                } */
             }
 
             if (user == 'Olga') {
 
-                for (const napok of myObj.Olga.nyitvatartas) {
+                this.date(document.querySelector('#idopont'), 20, 2, 4, 6)
+
+                /* for (const napok of myObj.Olga.nyitvatartas) {
 
                     document.querySelector('#idopont').innerHTML += `<option value="${napok.napIndex}">${napok.nap}</option>`
 
-                }
+                } */
             }
 
-            const selected = document.querySelector('#idopont');
 
             selected.addEventListener('change', () => {
 
@@ -207,6 +220,8 @@ class Kozmetikus {
                     }
                 }
 
+                let selectedDate = new Date(document.querySelector('#idopont').selectedOptions[0].innerHTML);
+                document.querySelector('.datum-display').innerHTML = this.napok[selectedDate.getDay()];
                 this.select();
 
             })
@@ -241,6 +256,10 @@ class Kozmetikus {
                 }
             }
         }
+
+        let selectedDate = new Date(document.querySelector('#idopont').selectedOptions[0].innerHTML);
+
+        document.querySelector('.datum-display').innerHTML = this.napok[selectedDate.getDay()];
 
         this.select();
 
