@@ -35,6 +35,24 @@
             "tol": "8",
             "ig": "12"
         }]
+    },
+    "Datumok": {
+        "honapok": [{
+            "Month": "Szeptember",
+            "monthIndex": 8,
+            "napszam": 30
+        }, {
+            "Month": "Október",
+            "monthIndex": 9,
+            "napszam": 31
+        }, {
+            "Month": "November",
+            "monthIndex": 10,
+            "napszam": 30
+        }, {
+            "Month": "December",
+            "monthIndex": 11,
+            "napszam": 31
+        }]
     }
-
 }

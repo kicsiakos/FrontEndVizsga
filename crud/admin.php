@@ -129,6 +129,52 @@
 
         <!-- ÚJ SOR HOZZÁADÁSÁNAK VÉGE -->
 
+        <div class="table">
+            <table>
+                <?php
+
+                $conn = new mysqli($servername, $user, $pass, $database);
+                $_SESSION['foglalasTabla'] = "foglalasok";
+                $sql = "SELECT  id,
+                                nev,
+                                telefonszam,
+                                idopont,
+                                fodrasz FROM " . $_SESSION['foglalasTabla'];
+
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $sorok[] = $row;
+                    }
+                }
+
+                ?>
+                <tr>
+                    <th colspan="8">Foglalások</th>
+                </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Név</th>
+                    <th>Telefonszám</th>
+                    <th>Időpont</th>
+                    <th>Fodrász</th>
+                </tr>
+                <?php for ($i = 0; $i < count($sorok); $i++) { ?>
+                    <tr>
+                        <td><b><?php print ($sorok[$i]['id']) ?></b></td>
+                        <td><?php print ($sorok[$i]['nev']) ?></td>
+                        <td><?php print ($sorok[$i]['telefonszam']) ?></td>
+                        <td><?php print ($sorok[$i]['idopont']) ?></td>
+                        <td><?php print ($sorok[$i]['fodrasz']) ?></td>
+                    <?php } ?>
+
+                </tr>
+                <?php mysqli_close($conn) ?>
+                <?php unset($sorok) ?>
+
+            </table>
+        </div>
+
         
     </div>
 </body>

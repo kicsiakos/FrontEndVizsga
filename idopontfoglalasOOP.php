@@ -31,14 +31,18 @@ class IdopontfoglalasOOP
         if (
             isset($_POST["nev"]) &&
             isset($_POST["telefonszam"]) &&
-            isset($_POST["idopont"])
+            isset($_POST["idopont"]) &&
+            isset($_POST["user"]) &&
+            isset($_POST["nap"])
         ) {
             $nev = $this->test_input($_POST["nev"]);
             $telefonSzam = $this->test_input($_POST["telefonszam"]);
             $idopont = $this->test_input($_POST["idopont"]);
+            $user = $this->test_input($_POST["user"]);
+            $nap = $this->test_input($_POST["nap"]);
 
-            $sql = "INSERT INTO foglalasok (nev, telefonszam, idopont)
-            VALUES ('$nev', '$telefonSzam', '$idopont')";
+            $sql = "INSERT INTO foglalasok (nev, telefonszam, nap, idopont, fodrasz)
+            VALUES ('$nev', '$telefonSzam','$nap', '$idopont', '$user')";
         }
 
         if (mysqli_query($this->conn, $sql)) {

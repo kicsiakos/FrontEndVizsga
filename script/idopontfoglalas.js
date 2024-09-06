@@ -65,8 +65,13 @@ class Kozmetikus {
 
     }
 
-    book() {
+    date(element) {
 
+        const today = new Date();
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+
+        }
 
 
     }
@@ -79,22 +84,29 @@ class Kozmetikus {
 
             let myitem = idokpontok.querySelector('.selected');
 
-            if (myitem) {
+            if (myitem && myitem !== this) {
+
+                this.classList.add('selected');
                 myitem.classList.remove('selected');
+
+            } else {
+
+                this.classList.toggle('selected');
+
             }
-
-            this.classList.add('selected');
-
         }))
+    }
 
 
-        this.bookBtn = document.querySelector('#foglalas-button');
+    foglalas() {
 
         this.bookBtn.addEventListener('click', function () {
 
             let guestName = document.querySelector('#guest-name').value;
             let guestPhone = document.querySelector('#guest-phone').value;
             let guestTime = document.querySelector('.selected').value;
+            let user = document.querySelector('.foglalas-div').id;
+            let date = document.querySelector('#idopont').selectedOptions[0].innerHTML;
 
             const xhttp = new XMLHttpRequest();
             xhttp.open("POST", "../idopontfoglalasOOP.php");
@@ -104,7 +116,7 @@ class Kozmetikus {
                     alert('SIKERES FOGLALÁS')
                 }
             }
-            xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${guestTime}`);
+            xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${guestTime}&user=${user}&nap=${date}`);
             console.log('katt');
 
         })
@@ -119,15 +131,25 @@ class Kozmetikus {
             let myObj = await request.json();
 
             this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
+                                            <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
+                                            <div class="guest-details"><div><input type="text" id="guest-name" placeholder="Név"></div>
+                                            <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div></div>
+                                            <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
+                                            <div class="foglalas-idopontok"></div>
+                                            <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
+
+            /* this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
                                 <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
-                                <div class="guest-details"><div><input type="text" id="guest-name" placeholder="Név"></div>
-                                <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div></div>
                                 <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
+                                <div class="datum-display">HÉTFŐ</div>
                                 <div class="foglalas-idopontok"></div>
-                                <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
+                                <div><button id="foglalas-button">Lefoglalom</button></div></div>`; */
 
             this.parentElement.innerHTML = "";
             this.parentElement.innerHTML = this.foglalasTpl;
+            this.bookBtn = document.querySelector('#foglalas-button');
+            this.bookBtn.onclick = this.foglalas();
+
 
 
 
@@ -151,7 +173,7 @@ class Kozmetikus {
 
             const selected = document.querySelector('#idopont');
 
-            selected.addEventListener('change', function () {
+            selected.addEventListener('change', () => {
 
                 document.querySelector('.foglalas-idopontok').innerHTML = '';
 
@@ -168,7 +190,6 @@ class Kozmetikus {
                             }
                         }
                     }
-
                 }
 
                 if (user == 'Olga') {
@@ -184,8 +205,10 @@ class Kozmetikus {
                             }
                         }
                     }
-
                 }
+
+                this.select();
+
             })
 
             if (user == 'Vanda') {
