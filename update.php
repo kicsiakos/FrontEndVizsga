@@ -5,6 +5,14 @@ $jsonString = file_get_contents($path);
 $jsonData = json_decode($jsonString, true);
 var_dump($jsonData);
 
+if (!is_array($jsonData)) {
+    $jsonData = [];
+}
+
+if (!isset($jsonData["foglalas"]) || !is_array($jsonData["foglalas"])) {
+    $jsonData["foglalas"] = [];
+}
+
 $conn;
 $servername = "localhost";
 $user = "root";
@@ -29,19 +37,17 @@ if ($result->num_rows > 0) {
 
 for ($i = 0; $i < count($sorok); $i++) {
 
-    $jsonData = [
+    $ujFoglalas = [
         [
             "foglalas[$i]" => [
+                "nev" => $sorok[$i]['nev'],
                 "nap" => $sorok[$i]['nap'],
                 "ora" => $sorok[$i]['idopont']
             ]
         ]
     ];
 
-    $nap = $sorok[$i]['nap'];
-    $ora = $sorok[$i]['idopont'];
-
-    print ($nap . " " . $ora . '<br>');
+    $jsonData["foglalas"][] = $ujFoglalas;
 
 }
 
@@ -53,3 +59,4 @@ fclose($fp);
 
 mysqli_close($conn);
 unset($sorok);
+unset($ujFoglalas);
