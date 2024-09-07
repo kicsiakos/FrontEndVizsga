@@ -1,5 +1,4 @@
 {
-
     "Vanda": {
         "nyitvatartas": [{
             "nap": "Hétfő",
@@ -9,13 +8,13 @@
         }, {
             "nap": "Szerda",
             "napIndex": 3,
-            "tol": "8",
-            "ig": "16"
+            "tol": "10",
+            "ig": "18"
         }, {
             "nap": "Péntek",
             "napIndex": 5,
             "tol": "8",
-            "ig": "16"
+            "ig": "14"
         }]
     },
     "Olga": {
@@ -23,36 +22,17 @@
             "nap": "Kedd",
             "napIndex": 2,
             "tol": "8",
-            "ig": "16"
+            "ig": "18"
         }, {
             "nap": "Csütörtök",
             "napIndex": 4,
-            "tol": "8",
+            "tol": "10",
             "ig": "16"
         }, {
             "nap": "Szombat",
             "napIndex": 6,
             "tol": "8",
             "ig": "12"
-        }]
-    },
-    "Datumok": {
-        "honapok": [{
-            "Month": "Szeptember",
-            "monthIndex": 8,
-            "napszam": 30
-        }, {
-            "Month": "Október",
-            "monthIndex": 9,
-            "napszam": 31
-        }, {
-            "Month": "November",
-            "monthIndex": 10,
-            "napszam": 30
-        }, {
-            "Month": "December",
-            "monthIndex": 11,
-            "napszam": 31
         }]
     }
 }

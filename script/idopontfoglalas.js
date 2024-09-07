@@ -18,6 +18,7 @@ class Kozmetikus {
     selectedDate;
     bookBtn;
     napok = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];
+    honapok = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
 
 
     constructor(nev, titulus, bemutatkozas, kepSrc, parent) {
@@ -66,6 +67,32 @@ class Kozmetikus {
 
     }
 
+    renderDateTable(user, table) {
+
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        let day = today.getDate();
+
+        for (let i = 0; i < dayNum; i++) {
+
+            let newDate = new Date(year, month, day + i);
+            let newDateDayIndex = newDate.getDay();
+
+        }
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "../idopontfoglalasOOP.php");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                this.foglalasDetails();
+            }
+        }
+        xhttp.send(`idopont=${guestTime}&user=${user}&nap=${date}`);
+
+    }
+
     date(element, dayNum, ...dayIndex) {
 
         let today = new Date();
@@ -107,27 +134,61 @@ class Kozmetikus {
         }))
     }
 
-
     foglalas() {
 
-        this.bookBtn.addEventListener('click', function () {
+        this.bookBtn.addEventListener('click', async function () {
 
-            /*  let guestName = document.querySelector('#guest-name').value;
-             let guestPhone = document.querySelector('#guest-phone').value; */
+            let request = await fetch('./db/foglalasok.JSON');
+            let myObj = await request.json();
+
+            console.log(myObj);
+
+            let guestName = document.querySelector('#guest-name').value;
+            let guestPhone = document.querySelector('#guest-phone').value;
             let guestTime = document.querySelector('.selected').value;
             let user = document.querySelector('.foglalas-div').id;
             let date = document.querySelector('#idopont').selectedOptions[0].innerHTML;
+
+            const userObj = {
+                nev: guestName,
+                datum: date,
+                ora: guestTime,
+                telefon: guestPhone,
+                fodrasz: user
+            }
+
+/*             if (user == 'Vanda') {
+                myObj.Vanda.idopontfoglalasok.push(userObj)
+                console.log(`${user} idopontfoglalasok updated:`, myObj.Vanda.idopontfoglalasok);
+            }
+            if (user == 'Olga') {
+                myObj.Olga.idopontfoglalasok.push(userObj)
+                console.log(`${user} idopontfoglalasok updated:`, myObj.Olga.idopontfoglalasok);
+            }
+
+            const xhttpJson = new XMLHttpRequest();
+            xhttpJson.open("POST", "../db/foglalasok.JSON");
+            xhttpJson.setRequestHeader("Content-type", "application/json");
+            xhttpJson.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    alert('jsonOK');
+                }
+            }
+            xhttpJson.send(JSON.stringify(myObj)); */
 
             const xhttp = new XMLHttpRequest();
             xhttp.open("POST", "../idopontfoglalasOOP.php");
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    alert('SIKERES FOGLALÁS')
+
+                    localStorage.setItem(`foglalas-${localStorage.length}`, JSON.stringify(userObj));
+
+                    alert('sqlOK');
                 }
             }
             xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${guestTime}&user=${user}&nap=${date}`);
-
         })
     }
 
@@ -138,21 +199,25 @@ class Kozmetikus {
             let request = await fetch('./db/foglalasok.JSON');
             let myObj = await request.json();
 
-            this.foglalasTpl =
-                /* `<div class="foglalas-div" id='${this.nev}'>
-                                                           <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
-                                                           <div class="guest-details"><div><input type="text" id="guest-name" placeholder="Név"></div>
-                                                           <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div></div>
-                                                           <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
-                                                           <div class="foglalas-idopontok"></div>
-                                                           <div><button id="foglalas-button">Lefoglalom</button></div></div>`; */
+            console.log(myObj);
+            
+            
 
-                this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
+            this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
                                 <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
+                                <div class="guest-details"><div><input type="text" id="guest-name" placeholder="Név"></div>
+                                <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div></div>
                                 <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
                                 <div class="datum-display"></div>
                                 <div class="foglalas-idopontok"></div>
                                 <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
+
+            /* this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
+                            <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
+                            <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
+                            <div class="datum-display"></div>
+                            <div class="foglalas-idopontok"></div>
+                            <div><button id="foglalas-button">Lefoglalom</button></div></div>`; */
 
             this.parentElement.innerHTML = "";
             this.parentElement.innerHTML = this.foglalasTpl;
