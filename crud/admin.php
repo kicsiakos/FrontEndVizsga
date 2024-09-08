@@ -138,6 +138,7 @@
                 $sql = "SELECT  id,
                                 nev,
                                 telefonszam,
+                                nap,
                                 idopont,
                                 fodrasz FROM " . $_SESSION['foglalasTabla'];
 
@@ -156,6 +157,7 @@
                     <th>ID</th>
                     <th>Név</th>
                     <th>Telefonszám</th>
+                    <th>Nap</th>
                     <th>Időpont</th>
                     <th>Fodrász</th>
                 </tr>
@@ -164,6 +166,7 @@
                         <td><b><?php print ($sorok[$i]['id']) ?></b></td>
                         <td><?php print ($sorok[$i]['nev']) ?></td>
                         <td><?php print ($sorok[$i]['telefonszam']) ?></td>
+                        <td><?php print ($sorok[$i]['nap']) ?></td>
                         <td><?php print ($sorok[$i]['idopont']) ?></td>
                         <td><?php print ($sorok[$i]['fodrasz']) ?></td>
                     <?php } ?>

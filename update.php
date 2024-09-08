@@ -1,62 +1,74 @@
 <?php
+header('Content-Type: application/json; charset=utf-8');
 
-$path = './db/foglaltIdopontok.JSON';
-$jsonString = file_get_contents($path);
-$jsonData = json_decode($jsonString, true);
-var_dump($jsonData);
+$jsonData = file_get_contents('php://input');
+$userObj = json_decode($jsonData, true);
 
-if (!is_array($jsonData)) {
-    $jsonData = [];
-}
+if ($userObj) {
 
-if (!isset($jsonData["foglalas"]) || !is_array($jsonData["foglalas"])) {
-    $jsonData["foglalas"] = [];
-}
+    $file = './db/foglalasok.JSON';
 
-$conn;
-$servername = "localhost";
-$user = "root";
-$pass = "";
-$database = "phpvizsga";
+    if (file_exists($file) && is_readable($file)) {
 
-$conn = new mysqli($servername, $user, $pass, $database);
-$_SESSION['foglalasTabla'] = "foglalasok";
-$sql = "SELECT                  id,
-                                nev,
-                                telefonszam,
-                                nap,
-                                idopont,
-                                fodrasz FROM " . $_SESSION['foglalasTabla'];
+        $currentData = json_decode(file_get_contents($file), true);
 
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $sorok[] = $row;
+        if (json_last_error() === JSON_ERROR_NONE) {
+
+            if ($userObj['fodrasz'] == 'Vanda') {
+
+                $currentData['Vanda']['idopontfoglalasok'][] = $userObj;
+
+            } elseif ($userObj['fodrasz'] == 'Olga') {
+
+                $currentData['Olga']['idopontfoglalasok'][] = $userObj;
+
+            }
+
+            $fileHandle = fopen($file, 'w');
+
+            if ($fileHandle) {
+
+                if (flock($fileHandle, LOCK_EX)) { 
+
+                    $jsonContent = json_encode($currentData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+                    if (fwrite($fileHandle, $jsonContent)) {
+
+                        echo json_encode(['message' => 'jsonOK'], JSON_UNESCAPED_UNICODE);
+
+                    } else {
+
+                        echo json_encode(['message' => 'Hiba történt az adatok írásakor.'], JSON_UNESCAPED_UNICODE);
+                    }
+
+                    flock($fileHandle, LOCK_UN);
+
+                } else {
+
+                    echo json_encode(['message' => 'Nem sikerült lockolni a fájlt.'], JSON_UNESCAPED_UNICODE);
+
+                }
+
+                fclose($fileHandle);
+
+            } else {
+
+                echo json_encode(['message' => 'Nem sikerült megnyitni a fájlt írásra.'], JSON_UNESCAPED_UNICODE);
+
+            }
+        } else {
+
+            echo json_encode(['message' => 'Hiba történt a JSON dekódolásakor.'], JSON_UNESCAPED_UNICODE);
+
+        }
+    } else {
+
+        echo json_encode(['message' => 'A fájl nem található vagy nem olvasható.'], JSON_UNESCAPED_UNICODE);
+
     }
-}
+    
+} else {
 
-for ($i = 0; $i < count($sorok); $i++) {
-
-    $ujFoglalas = [
-        [
-            "foglalas[$i]" => [
-                "nev" => $sorok[$i]['nev'],
-                "nap" => $sorok[$i]['nap'],
-                "ora" => $sorok[$i]['idopont']
-            ]
-        ]
-    ];
-
-    $jsonData["foglalas"][] = $ujFoglalas;
+    echo json_encode(['message' => 'Invalid data'], JSON_UNESCAPED_UNICODE);
 
 }
-
-$jsonString = json_encode($jsonData, JSON_PRETTY_PRINT);
-// Write in the file
-$fp = fopen($path, 'w');
-fwrite($fp, $jsonString);
-fclose($fp);
-
-mysqli_close($conn);
-unset($sorok);
-unset($ujFoglalas);

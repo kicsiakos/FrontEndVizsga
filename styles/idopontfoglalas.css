@@ -326,6 +326,24 @@ li.dropdown {
     margin-top: 1vw;
 }
 
+.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.maindiv {
+    display: flex;
+}
+
+.maindiv>div {
+    position: unset;
+}
+
+.textdiv {
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 @media only screen and (max-width: 1150px) {

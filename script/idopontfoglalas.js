@@ -43,9 +43,7 @@ class Kozmetikus {
     build() {
 
         this.element = evalTpl(this.tpl);
-
         this.foglalasBtn = this.element.querySelector('.fodraszBtn');
-
         this.foglalasBtn.addEventListener('click', async () => {
 
             if (this.element.id === 'Olga') {
@@ -67,32 +65,6 @@ class Kozmetikus {
 
     }
 
-    renderDateTable(user, table) {
-
-        let today = new Date();
-        let year = today.getFullYear();
-        let month = today.getMonth();
-        let day = today.getDate();
-
-        for (let i = 0; i < dayNum; i++) {
-
-            let newDate = new Date(year, month, day + i);
-            let newDateDayIndex = newDate.getDay();
-
-        }
-
-        const xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "../idopontfoglalasOOP.php");
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                this.foglalasDetails();
-            }
-        }
-        xhttp.send(`idopont=${guestTime}&user=${user}&nap=${date}`);
-
-    }
-
     date(element, dayNum, ...dayIndex) {
 
         let today = new Date();
@@ -106,8 +78,11 @@ class Kozmetikus {
             let newDateDayIndex = newDate.getDay();
 
             dayIndex.forEach(v => {
+
                 if (newDateDayIndex == v) {
+
                     element.innerHTML += `<option value="${newDateDayIndex}">${year}-${month+1}-${day+i}</option>`
+
                 }
             })
         }
@@ -150,45 +125,87 @@ class Kozmetikus {
             let date = document.querySelector('#idopont').selectedOptions[0].innerHTML;
 
             const userObj = {
+
                 nev: guestName,
                 datum: date,
                 ora: guestTime,
                 telefon: guestPhone,
                 fodrasz: user
+
             }
 
-/*             if (user == 'Vanda') {
-                myObj.Vanda.idopontfoglalasok.push(userObj)
-                console.log(`${user} idopontfoglalasok updated:`, myObj.Vanda.idopontfoglalasok);
-            }
-            if (user == 'Olga') {
-                myObj.Olga.idopontfoglalasok.push(userObj)
-                console.log(`${user} idopontfoglalasok updated:`, myObj.Olga.idopontfoglalasok);
-            }
+            try {
 
-            const xhttpJson = new XMLHttpRequest();
-            xhttpJson.open("POST", "../db/foglalasok.JSON");
-            xhttpJson.setRequestHeader("Content-type", "application/json");
-            xhttpJson.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
+                const response = await fetch('../update.php', {
 
-                    alert('jsonOK');
+                    method: 'POST',
+                    headers: {
+
+                        'Content-Type': 'application/json',
+
+                    },
+
+                    body: JSON.stringify(userObj)
+
+                });
+
+                if (response.ok) {
+
+                    const result = await response.text();
+                    console.log(result);
+
+                } else {
+
+                    console.error('Hiba történt az adatok küldése közben.');
+
                 }
-            }
-            xhttpJson.send(JSON.stringify(myObj)); */
+            } catch (error) {
+
+                console.error('Hiba történt:', error);
+
+            };
 
             const xhttp = new XMLHttpRequest();
             xhttp.open("POST", "../idopontfoglalasOOP.php");
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
+            xhttp.onreadystatechange = () => {
+
+                console.log(xhttp.readyState);
+                console.log(xhttp.status);
+
+
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
 
                     localStorage.setItem(`foglalas-${localStorage.length}`, JSON.stringify(userObj));
 
-                    alert('sqlOK');
+                    console.log('Sql OK');
+
+                    console.log(this);
+                    
+                    let text = `Köszönöm a foglalást! Várjuk szeretettel a választott időpontban.
+                                A foglalás lemondása legkésőbb 48órával az időpont előtt lehetséges!`;
+
+                    const finalTpl = `<div class="maindiv">
+                                <div class="textdiv">
+                                    <div class="text">${text}</div>
+                                    <div><button class="backbutton">Vissza a főoldalra</button></div>
+                                </div>
+                            </div>`;
+
+
+                    let img = this.parentElement.parentElement.children[0];
+
+                    this.parentElement.parentElement.parentElement.innerHTML = '';
+                    document.querySelector('.main').innerHTML = finalTpl;
+                    document.querySelector('.maindiv').insertAdjacentElement('afterbegin',img)
+                    console.log(img);
+                    
+
                 }
             }
+
             xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${guestTime}&user=${user}&nap=${date}`);
+
         })
     }
 
@@ -199,25 +216,17 @@ class Kozmetikus {
             let request = await fetch('./db/foglalasok.JSON');
             let myObj = await request.json();
 
-            console.log(myObj);
-            
-            
-
             this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
                                 <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
-                                <div class="guest-details"><div><input type="text" id="guest-name" placeholder="Név"></div>
-                                <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div></div>
+                                <div class="guest-details">
+                                    <div><input type="text" id="guest-name" placeholder="Név"></div>
+                                    <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div>
+                                </div>
                                 <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
                                 <div class="datum-display"></div>
                                 <div class="foglalas-idopontok"></div>
-                                <div><button id="foglalas-button">Lefoglalom</button></div></div>`;
-
-            /* this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>
-                            <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
-                            <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
-                            <div class="datum-display"></div>
-                            <div class="foglalas-idopontok"></div>
-                            <div><button id="foglalas-button">Lefoglalom</button></div></div>`; */
+                                <div><button id="foglalas-button">Lefoglalom</button></div>
+                                </div>`;
 
             this.parentElement.innerHTML = "";
             this.parentElement.innerHTML = this.foglalasTpl;
@@ -226,59 +235,38 @@ class Kozmetikus {
 
             const selected = document.querySelector('#idopont');
 
-
-
             if (user == 'Vanda') {
 
-                this.date(document.querySelector('#idopont'), 20, 1, 3, 5)
+                this.date(document.querySelector('#idopont'), 20, 1, 3, 5);
 
-                /* for (const napok of myObj.Vanda.nyitvatartas) {
-
-                    document.querySelector('#idopont').innerHTML += `<option value="${napok.napIndex}">${napok.nap}</option>`
-
-                } */
             }
 
             if (user == 'Olga') {
 
-                this.date(document.querySelector('#idopont'), 20, 2, 4, 6)
+                this.date(document.querySelector('#idopont'), 20, 2, 4, 6);
 
-                /* for (const napok of myObj.Olga.nyitvatartas) {
-
-                    document.querySelector('#idopont').innerHTML += `<option value="${napok.napIndex}">${napok.nap}</option>`
-
-                } */
             }
-
 
             selected.addEventListener('change', () => {
 
                 document.querySelector('.foglalas-idopontok').innerHTML = '';
 
-                if (user == 'Vanda') {
+                const foglalasok = user === 'Vanda' ? myObj.Vanda.idopontfoglalasok : myObj.Olga.idopontfoglalasok;
+                const foglaltIdopontok = foglalasok.filter(booking => booking.datum === selected.selectedOptions[0].innerHTML).map(booking => booking.ora);
+                const selectedDay = selected.value;
+                const nyitvatartas = user === 'Vanda' ? myObj.Vanda.nyitvatartas : myObj.Olga.nyitvatartas;
 
-                    for (const idopontok of myObj.Vanda.nyitvatartas) {
+                for (const idopontok of nyitvatartas) {
 
-                        if (idopontok.napIndex == selected.value) {
+                    if (idopontok.napIndex == selectedDay) {
 
-                            for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
+                        for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
 
-                                document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${i}:00">${i}:00</button></div>`
+                            const time = `${i}:00`;
 
-                            }
-                        }
-                    }
-                }
+                            if (!foglaltIdopontok.includes(time)) {
 
-                if (user == 'Olga') {
-
-                    for (const idopontok of myObj.Olga.nyitvatartas) {
-
-                        if (idopontok.napIndex == selected.value) {
-
-                            for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
-
-                                document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${i}:00">${i}:00</button></div>`
+                                document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${time}">${time}</button></div>`;
 
                             }
                         }
@@ -289,46 +277,51 @@ class Kozmetikus {
                 document.querySelector('.datum-display').innerHTML = this.napok[selectedDate.getDay()];
                 this.select();
 
-            })
+            });
 
-            if (user == 'Vanda') {
+            const aktivNap = selected.value;
+            const foglalasok = user === 'Vanda' ? myObj.Vanda.idopontfoglalasok : myObj.Olga.idopontfoglalasok;
+            const foglaltIdopontok = foglalasok.filter(booking => booking.datum === selected.selectedOptions[0].innerHTML).map(booking => booking.ora);
+            const nyitvatartas = user === 'Vanda' ? myObj.Vanda.nyitvatartas : myObj.Olga.nyitvatartas;
 
-                for (const idopontok of myObj.Vanda.nyitvatartas) {
+            for (const idopontok of nyitvatartas) {
 
-                    if (idopontok.napIndex == selected.value) {
+                if (idopontok.napIndex == aktivNap) {
 
-                        for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
+                    for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
 
-                            document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${i}:00">${i}:00</button></div>`
+                        const time = `${i}:00`;
+                        if (!foglaltIdopontok.includes(time)) {
 
-                        }
-                    }
-                }
-            }
-
-            if (user == 'Olga') {
-
-                for (const idopontok of myObj.Olga.nyitvatartas) {
-
-                    if (idopontok.napIndex == selected.value) {
-
-                        for (let i = parseInt(idopontok.tol); i < parseInt(idopontok.ig); i++) {
-
-                            document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${i}:00">${i}:00</button></div>`
+                            document.querySelector('.foglalas-idopontok').innerHTML += `<div><button id="${i}" value="${time}">${time}</button></div>`;
 
                         }
                     }
                 }
             }
+
+            let selectedDate = new Date(document.querySelector('#idopont').selectedOptions[0].innerHTML);
+            document.querySelector('.datum-display').innerHTML = this.napok[selectedDate.getDay()];
+
+            this.select();
         }
+    }
 
-        let selectedDate = new Date(document.querySelector('#idopont').selectedOptions[0].innerHTML);
+    finalize() {
 
-        document.querySelector('.datum-display').innerHTML = this.napok[selectedDate.getDay()];
+        const finalTpl = `<div class="maindiv">
+                                <div class="imgdiv" style="background-image: url(${this.kepSrc});></div>
+                                <div class="textdiv">
+                                    <div class="text">Köszönöm a foglalását, hamarosan felveszem Önnel a kapcsolatot!</div>
+                                    <div><button class="backbutton">Vissza a főoldalra</button></div>
+                                </div>
+                            </div>`;
 
-        this.select();
+        this.parentElement.innerHTML = '';
+        this.parentElement.innerHTML = finalTpl;
 
     }
+
 
 }
 
