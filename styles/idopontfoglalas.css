@@ -95,6 +95,8 @@ textarea {
     align-items: center;
     align-content: center;
     box-shadow: 5px 5px 20px gray;
+    border-radius: 2vw;
+    border: 2px solid yellow;
 }
 
 
@@ -186,7 +188,7 @@ li.dropdown {
     margin-top: 10rem;
     border: 2px solid yellow;
     border-radius: 2rem;
-    width: 80vw;
+    width: 67vw;
     height: 45vw;
     display: flex;
     flex-direction: column;
@@ -263,14 +265,16 @@ li.dropdown {
 }
 
 .foglalas-idopontok {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
     width: 50vw;
     height: 15vw;
     text-align: center;
     align-items: center;
     margin-bottom: 1vw;
     margin-top: 1vw;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    gap: 2vw;
 
 }
 
@@ -289,7 +293,7 @@ li.dropdown {
 }
 
 #idopont {
-    width: 15vw;
+    width: 24vw;
     height: 5vw;
     text-align: center;
     font-weight: bold;

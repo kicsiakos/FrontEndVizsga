@@ -190,7 +190,7 @@ class Kozmetikus {
                         console.log(this);
 
                         let text = `Köszönöm a foglalást! Várjuk szeretettel a választott időpontban.
-                                        A foglalás lemondása legkésőbb 48órával az időpont előtt lehetséges!`;
+                                        A foglalás lemondása legkésőbb 48 órával az időpont előtt lehetséges!`;
 
                         const finalTpl = `<div class="maindiv" id="${this.parentElement.parentElement.id}">
                                         <div class="textdiv">
@@ -328,25 +328,11 @@ class Kozmetikus {
             this.select();
         }
     }
-
-    finalize() {
-
-        const finalTpl = `<div class="maindiv">
-                                <div class="imgdiv" style="background-image: url(${this.kepSrc});></div>
-                                <div class="textdiv">
-                                    <div class="text">Köszönöm a foglalását, hamarosan felveszem Önnel a kapcsolatot!</div>
-                                    <div><button class="backbutton">Vissza a főoldalra</button></div>
-                                </div>
-                            </div>`;
-
-        this.parentElement.innerHTML = '';
-        this.parentElement.innerHTML = finalTpl;
-
-    }
-
-
 }
 
 export {
     Kozmetikus
 }
+
+
+
