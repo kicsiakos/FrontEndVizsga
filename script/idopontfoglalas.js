@@ -185,7 +185,7 @@ class Kozmetikus {
                     let text = `Köszönöm a foglalást! Várjuk szeretettel a választott időpontban.
                                 A foglalás lemondása legkésőbb 48órával az időpont előtt lehetséges!`;
 
-                    const finalTpl = `<div class="maindiv">
+                    const finalTpl = `<div class="maindiv" id="${this.parentElement.parentElement.id}">
                                 <div class="textdiv">
                                     <div class="text">${text}</div>
                                     <div><button class="backbutton">Vissza a főoldalra</button></div>
@@ -197,7 +197,10 @@ class Kozmetikus {
 
                     this.parentElement.parentElement.parentElement.innerHTML = '';
                     document.querySelector('.main').innerHTML = finalTpl;
-                    document.querySelector('.maindiv').insertAdjacentElement('afterbegin',img)
+                    document.querySelector('.maindiv').insertAdjacentElement('afterbegin',img);
+                    document.querySelector('.backbutton').addEventListener('click',function(){
+                        window.location.assign('../index.php')
+                    })
                     console.log(img);
                     
 

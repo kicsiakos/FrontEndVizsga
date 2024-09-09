@@ -198,7 +198,7 @@ li.dropdown {
     padding-bottom: 3vw;
     box-shadow: #546213 5px 5px 15px 1px;
 
-    
+
 }
 
 .fodrasz-img,
@@ -333,15 +333,42 @@ li.dropdown {
 
 .maindiv {
     display: flex;
+    height: 30vw;
 }
 
 .maindiv>div {
     position: unset;
+    align-self: center;
+}
+
+#Olga.user-img {
+    background-position: 60%;
+    background-size: 230%;
+    background-position-y: 3%;
 }
 
 .textdiv {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3vw;
+}
+
+.backbutton {
+    background-color: beige;
+    font-weight: bold;
+    border: 2px solid yellow;
+    border-radius: 3vw;
+    box-shadow: #546213 5px 5px 15px 1px;
+    width: 16vw;
+    height: 3vw;
+    margin-top: 2vw;
+}
+
+.text {
+    font-size: 1.2vw;
+    font-weight: bold;
 }
 
 
