@@ -120,97 +120,112 @@ class Kozmetikus {
 
             let guestName = document.querySelector('#guest-name').value;
             let guestPhone = document.querySelector('#guest-phone').value;
-            let guestTime = document.querySelector('.selected').value;
+            let guestTime = '';
+            if (document.querySelector('.selected')) {
+                guestTime = document.querySelector('.selected').value;
+            } else {
+                alert('Időpontot választani közelező!')
+            }
             let user = document.querySelector('.foglalas-div').id;
             let date = document.querySelector('#idopont').selectedOptions[0].innerHTML;
 
-            const userObj = {
+            if (guestName && guestPhone && guestTime && user && date) {
 
-                nev: guestName,
-                datum: date,
-                ora: guestTime,
-                telefon: guestPhone,
-                fodrasz: user
+                const userObj = {
 
-            }
-
-            try {
-
-                const response = await fetch('../update.php', {
-
-                    method: 'POST',
-                    headers: {
-
-                        'Content-Type': 'application/json',
-
-                    },
-
-                    body: JSON.stringify(userObj)
-
-                });
-
-                if (response.ok) {
-
-                    const result = await response.text();
-                    console.log(result);
-
-                } else {
-
-                    console.error('Hiba történt az adatok küldése közben.');
+                    nev: guestName,
+                    datum: date,
+                    ora: guestTime,
+                    telefon: guestPhone,
+                    fodrasz: user
 
                 }
-            } catch (error) {
 
-                console.error('Hiba történt:', error);
+                try {
 
-            };
+                    const response = await fetch('../update.php', {
 
-            const xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "../idopontfoglalasOOP.php");
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.onreadystatechange = () => {
+                        method: 'POST',
+                        headers: {
 
-                console.log(xhttp.readyState);
-                console.log(xhttp.status);
+                            'Content-Type': 'application/json',
+
+                        },
+
+                        body: JSON.stringify(userObj)
+
+                    });
+
+                    if (response.ok) {
+
+                        const result = await response.text();
+                        console.log(result);
+
+                    } else {
+
+                        console.error('Hiba történt az adatok küldése közben.');
+
+                    }
+                } catch (error) {
+
+                    console.error('Hiba történt:', error);
+
+                };
+
+                const xhttp = new XMLHttpRequest();
+                xhttp.open("POST", "../idopontfoglalasOOP.php");
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.onreadystatechange = () => {
+
+                    console.log(xhttp.readyState);
+                    console.log(xhttp.status);
 
 
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) {
 
-                    localStorage.setItem(`foglalas-${localStorage.length}`, JSON.stringify(userObj));
+                        localStorage.setItem(`foglalas-${localStorage.length}`, JSON.stringify(userObj));
 
-                    console.log('Sql OK');
+                        console.log('Sql OK');
 
-                    console.log(this);
-                    
-                    let text = `Köszönöm a foglalást! Várjuk szeretettel a választott időpontban.
-                                A foglalás lemondása legkésőbb 48órával az időpont előtt lehetséges!`;
+                        console.log(this);
 
-                    const finalTpl = `<div class="maindiv" id="${this.parentElement.parentElement.id}">
-                                <div class="textdiv">
-                                    <div class="text">${text}</div>
-                                    <div><button class="backbutton">Vissza a főoldalra</button></div>
-                                </div>
-                            </div>`;
+                        let text = `Köszönöm a foglalást! Várjuk szeretettel a választott időpontban.
+                                        A foglalás lemondása legkésőbb 48órával az időpont előtt lehetséges!`;
+
+                        const finalTpl = `<div class="maindiv" id="${this.parentElement.parentElement.id}">
+                                        <div class="textdiv">
+                                            <div class="text">${text}</div>
+                                            <div><button class="backbutton">Vissza a főoldalra</button></div>
+                                        </div>
+                                    </div>`;
 
 
-                    let img = this.parentElement.parentElement.children[0];
+                        let img = this.parentElement.parentElement.children[0];
 
-                    this.parentElement.parentElement.parentElement.innerHTML = '';
-                    document.querySelector('.main').innerHTML = finalTpl;
-                    document.querySelector('.maindiv').insertAdjacentElement('afterbegin',img);
-                    document.querySelector('.backbutton').addEventListener('click',function(){
-                        window.location.assign('../index.php')
-                    })
-                    console.log(img);
-                    
+                        this.parentElement.parentElement.parentElement.innerHTML = '';
+                        document.querySelector('.main').innerHTML = finalTpl;
+                        document.querySelector('.maindiv').insertAdjacentElement('afterbegin', img);
+                        document.querySelector('.backbutton').addEventListener('click', function () {
+                            window.location.assign('index.php')
+                        })
+                        console.log(img);
 
+
+                    }
                 }
-            }
 
-            xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${guestTime}&user=${user}&nap=${date}`);
+                xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${guestTime}&user=${user}&nap=${date}`);
+
+            } else {
+                alert('Minden mező kitöltése kötelező!')
+            }
 
         })
     }
+
+
+
+
 
     async renderTimes(user) {
 
@@ -223,7 +238,7 @@ class Kozmetikus {
                                 <div class="user-img" style="background-image: url(${this.kepSrc});"></div>
                                 <div class="guest-details">
                                     <div><input type="text" id="guest-name" placeholder="Név"></div>
-                                    <div><input type="number" id="guest-phone" placeholder="Telefonszám"></div>
+                                    <div><input type="tel" id="guest-phone" placeholder="Telefonszám"></div>
                                 </div>
                                 <div class="foglalas-datum"><select name="idopont" id="idopont"></select></div>
                                 <div class="datum-display"></div>
@@ -235,6 +250,10 @@ class Kozmetikus {
             this.parentElement.innerHTML = this.foglalasTpl;
             this.bookBtn = document.querySelector('#foglalas-button');
             this.bookBtn.onclick = this.foglalas();
+
+            document.querySelector('#guest-name').required = true;
+
+
 
             const selected = document.querySelector('#idopont');
 

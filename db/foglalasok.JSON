@@ -55,6 +55,20 @@
                 "ora": "11:00",
                 "telefon": "65165165",
                 "fodrasz": "Vanda"
+            },
+            {
+                "nev": "",
+                "datum": "2024-9-9",
+                "ora": "8:00",
+                "telefon": "",
+                "fodrasz": "Vanda"
+            },
+            {
+                "nev": "dsfsfsdf",
+                "datum": "2024-9-9",
+                "ora": "15:00",
+                "telefon": "342423424",
+                "fodrasz": "Vanda"
             }
         ]
     },
