@@ -10,7 +10,6 @@ body {
 .nav-horgonyok li {
     list-style-type: none;
     display: inline;
-
 }
 
 .nav-horgonyok a,
@@ -22,7 +21,6 @@ body {
     padding-right: 1rem;
     text-transform: uppercase;
     font-size: 1.4rem;
-
 }
 
 .nav-horgonyok a:hover {
@@ -148,7 +146,6 @@ footer {
     display: none;
     background-color: white;
     box-shadow: 5px 5px 20px gray;
-
 }
 
 .dropdown-content a {
@@ -156,7 +153,6 @@ footer {
     border-bottom: 1px solid black;
     display: block;
     padding-bottom: 1rem;
-
 }
 
 li.dropdown {

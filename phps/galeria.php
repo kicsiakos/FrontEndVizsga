@@ -24,74 +24,73 @@
         </header>
         <main>
             <div id="kep1" class="kep">
-                <p id="kep1-szoveg">Cover up - régi szemöldök takarasa Magic Shading technikával</p>
+                <p class="kep-szoveg">Cover up</p>
             </div>
             <div id="kep2" class="kep">
-                <p id="kep2-szoveg">Soft Liner - füstös szemhéjtetoválás</p>
+                <p class="kep-szoveg">Soft Liner</p>
             </div>
             <div id="kep3" class="kep">
-                <p id="kep3-szoveg">Soft Liner - füstös szemhéjtetoválás</p>
+                <p class="kep-szoveg">Soft Liner</p>
             </div>
             <div id="kep4" class="kep">
-                <p id="kep4-szoveg">Soft Liner - füstös szemhéjtetoválás</p>
+                <p class="kep-szoveg">Soft Liner</p>
             </div>
             <div id="kep5" class="kep">
-                <p id="kep5-szoveg">Magic Shading - púderes szemöldöktetoválás</p>
+                <p class="kep-szoveg">Magic Shading</p>
             </div>
             <div id="kep6" class="kep">
-                <p id="kep6-szoveg">Aquarelle Lips - ajaktetoválás</p>
+                <p class="kep-szoveg">Aquarelle Lips</p>
             </div>
             <div id="kep7" class="kep">
-                <p id="kep7-szoveg">Aquarelle Lips - ajaktetoválás</p>
+                <p class="kep-szoveg">Aquarelle Lips</p>
             </div>
             <div id="kep8" class="kep">
-                <p id="kep8-szoveg">Soft Liner - füstös szemhéjtetoválás</p>
+                <p class="kep-szoveg">Soft Liner</p>
             </div>
             <div id="kep9" class="kep">
-                <p id="kep9-szoveg">Soft Liner - füstös szemhéjtetoválás</p>
+                <p class="kep-szoveg">Soft Liner</p>
             </div>
             <div id="kep10" class="kep">
-                <p id="kep10-szoveg">Soft Liner - füstös szemhéjtetoválás</p>
+                <p class="kep-szoveg">Soft Liner</p>
             </div>
             <div id="kep11" class="kep">
-                <p id="kep11-szoveg">Soft Liner - füstös szemhéjtetoválás</p>
+                <p class="kep-szoveg">Soft Liner</p>
             </div>
             <div id="kep12" class="kep">
-                <p id="kep12-szoveg">Soft Liner - füstös szemhéjtetoválás</p>
+                <p class="kep-szoveg">Soft Liner</p>
             </div>
             <div id="kep13" class="kep">
-                <p id="kep13-szoveg">Interlash - szempillasűrítő tetoválás</p>
+                <p class="kep-szoveg">Interlash</p>
             </div>
             <div id="kep14" class="kep">
-                <p id="kep14-szoveg">3D Lips - ajaktetoválás </p>
+                <p class="kep-szoveg">3D Lips</p>
             </div>
             <div id="kep15" class="kep">
-                <p id="kep15-szoveg">Magic Shading - puderes szemöldöktetoválás</p>
+                <p class="kep-szoveg">Magic Shading</p>
             </div>
             <div id="kep16" class="kep">
-                <p id="kep16-szoveg">Aquarelle Lips - ajaktetoválás </p>
+                <p class="kep-szoveg">Aquarelle Lips</p>
             </div>
             <div id="kep17" class="kep">
-                <p id="kep17-szoveg">Magic Shading - púderes szemöldök tetoválás </p>
+                <p class="kep-szoveg">Magic Shading</p>
             </div>
             <div id="kep18" class="kep">
-                <p id="kep18-szoveg">Cover up - régi szemöldök takarása Magic Shading technikával
-                </p>
+                <p class="kep-szoveg">Cover up</p>
             </div>
             <div id="kep19" class="kep">
-                <p id="kep19-szoveg">Soft Liner - füstös szemhéjtetoválás</p>
+                <p class="kep1szoveg"></p>
             </div>
             <div id="kep20" class="kep">
-                <p id="kep20-szoveg">Russian Lips - ajakfeltöltés</p>
+                <p class="kep-szoveg"></p>
             </div>
             <div id="kep21" class="kep">
-                <p id="kep21-szoveg">Russian Lips - ajakfeltöltés</p>
+                <p class="kep-szoveg"></p>
             </div>
             <div id="kep22" class="kep">
-                <p id="kep22-szoveg">Russian Lips - ajakfeltöltés</p>
+                <p class="kep-szoveg"></p>
             </div>
             <div id="kep23" class="kep">
-                <p id="kep23-szoveg">Russian Lips - ajakfeltöltés</p>
+                <p class="kep-szoveg"></p>
             </div>
         </main>
     </div>
