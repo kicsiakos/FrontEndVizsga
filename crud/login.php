@@ -46,7 +46,7 @@ if (isset($_SESSION['id'])) {
             ?>
         </form>
     </div>
-    <script src="../script/login.mod.js"></script>
+    <script src="../scripts/login.mod.js"></script>
 </body>
 
 </html>

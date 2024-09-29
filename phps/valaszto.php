@@ -17,8 +17,8 @@
 <body>
     <div class="content">
         <main>
-            <a href="arlistaMiklos.php">Szigetszentmiklós</a>
-            <a href="arlistaKisszallas.php">Kisszállás</a>
+            <a href="../phps/arlistaMiklos.php">Szigetszentmiklós</a>
+            <a href="../phps/arlistaKisszallas.php">Kisszállás</a>
         </main>
     </div>
 </body>

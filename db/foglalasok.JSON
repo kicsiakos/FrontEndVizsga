@@ -23,51 +23,23 @@
         "idopontfoglalasok": [
             {
                 "nev": "Kiss Ákos",
-                "datum": "2024-9-9",
-                "ora": "10:00",
-                "telefon": "0123456789",
-                "fodrasz": "Vanda"
-            },
-            {
-                "nev": "Kiss Dezső",
-                "datum": "2024-9-20",
+                "datum": "2024-9-13",
                 "ora": "12:00",
-                "telefon": "456798123",
+                "telefon": "06302480795",
                 "fodrasz": "Vanda"
             },
             {
-                "nev": "Lakatos Aladár",
-                "datum": "2024-9-25",
-                "ora": "15:00",
-                "telefon": "516565165915",
-                "fodrasz": "Vanda"
-            },
-            {
-                "nev": "Lakatos Helga",
-                "datum": "2024-9-9",
-                "ora": "9:00",
-                "telefon": "6516516515",
-                "fodrasz": "Vanda"
-            },
-            {
-                "nev": "Lajos Lajos",
-                "datum": "2024-9-9",
+                "nev": "Kiss Daniel",
+                "datum": "2024-9-13",
                 "ora": "11:00",
-                "telefon": "65165165",
+                "telefon": "06708988585",
                 "fodrasz": "Vanda"
             },
             {
-                "nev": "",
-                "datum": "2024-9-9",
-                "ora": "8:00",
-                "telefon": "",
-                "fodrasz": "Vanda"
-            },
-            {
-                "nev": "dsfsfsdf",
-                "datum": "2024-9-9",
-                "ora": "15:00",
-                "telefon": "342423424",
+                "nev": "Leonárdó Dikáprió",
+                "datum": "2024-9-30",
+                "ora": "14:00",
+                "telefon": "06302547878",
                 "fodrasz": "Vanda"
             }
         ]
@@ -96,51 +68,9 @@
         "idopontfoglalasok": [
             {
                 "nev": "Fosztó Zsolt",
-                "datum": "2024-9-24",
-                "ora": "14:00",
-                "telefon": "9876543210",
-                "fodrasz": "Olga"
-            },
-            {
-                "nev": "Tóth Jancsika",
-                "datum": "2024-9-10",
-                "ora": "11:00",
-                "telefon": "15478569",
-                "fodrasz": "Olga"
-            },
-            {
-                "nev": "Váradi Lajos",
-                "datum": "2024-9-10",
-                "ora": "12:00",
-                "telefon": "84654654",
-                "fodrasz": "Olga"
-            },
-            {
-                "nev": "Olajos Lajos",
-                "datum": "2024-9-10",
-                "ora": "15:00",
-                "telefon": "54545",
-                "fodrasz": "Olga"
-            },
-            {
-                "nev": "Ágnes",
                 "datum": "2024-9-14",
                 "ora": "9:00",
-                "telefon": "w675476",
-                "fodrasz": "Olga"
-            },
-            {
-                "nev": "Mocsa",
-                "datum": "2024-9-14",
-                "ora": "10:00",
-                "telefon": "45657",
-                "fodrasz": "Olga"
-            },
-            {
-                "nev": "Mocsa",
-                "datum": "2024-9-14",
-                "ora": "10:00",
-                "telefon": "45657",
+                "telefon": "123456789",
                 "fodrasz": "Olga"
             }
         ]

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="hu">
 
-<?php require_once './config/conf.php' ?>
+<?php require_once '../db/config/conf.php' ?>
 
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tóth Horti Vanda - Sminktetováló</title>
-    <link rel="stylesheet" href="styles/arlistaMiklos.css">
+    <link rel="stylesheet" href="../styles/arlistaMiklos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
@@ -21,9 +21,9 @@
     <div class="content">
         <header>
             <nav>
-                <?php require_once ('view/nav.php') ?>
+                <?php require_once ('../view/nav.php') ?>
             </nav>
-            <h2 class="hely">Sminktetoválás - Tiszakécske</h2>
+            <h2 class="hely">Sminktetoválás - Szigetszentmiklós</h2>
         </header>
         <main>
 
@@ -36,7 +36,7 @@
             }
             ;
 
-            $sql = "SELECT eljaras_neve, megjegyzes, eljaras_ara FROM arlista WHERE eljaras_helyszine = 'Tiszakécske' AND eljaras_mod = 'Tetoválás'";
+            $sql = "SELECT eljaras_neve, megjegyzes, eljaras_ara FROM arlista WHERE eljaras_helyszine = 'Szigetszentmiklós' AND eljaras_mod = 'Tetoválás'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -80,10 +80,10 @@
         </div>
     </div>
     <div class="esztetika-arlista">
-        <h2 class="hely2">Esztétika - Tiszakécske</h2>
+        <h2 class="hely2">Esztétika - Szigetszentmiklós</h2>
 
 
-        <?php $sql2 = "SELECT eljaras_neve, megjegyzes, eljaras_ara FROM arlista WHERE eljaras_helyszine = 'Tiszakécske' AND eljaras_mod = 'Esztétika'";
+        <?php $sql2 = "SELECT eljaras_neve, megjegyzes, eljaras_ara FROM arlista WHERE eljaras_helyszine = 'Szigetszentmiklós' AND eljaras_mod = 'Esztétika'";
         $result2 = $conn->query($sql2);
 
         if ($result2->num_rows > 0) {
@@ -119,7 +119,7 @@
 
         </main>
     </div>
-    <script src="./script/app.js"></script>
+    <script src="./scripts/app.js"></script>
 </body>
 
 <?php $conn->close(); ?>;

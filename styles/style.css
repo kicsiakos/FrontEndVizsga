@@ -61,7 +61,7 @@ nav {
 }
 
 header {
-    background-image: url(../img/hatter.jpg);
+    background-image: url(../images/hatter.jpg);
     height: 25rem;
     background-size: cover;
     display: flex;
@@ -82,7 +82,7 @@ main {
 }
 
 .logo {
-    background-image: url(../img/logo2.jpeg);
+    background-image: url(../images/logo2.jpeg);
     height: 15rem;
     width: 20rem;
     background-size: contain;
@@ -255,7 +255,7 @@ li.dropdown {
         justify-content: space-evenly;
     }
 
-    .hamburger {
+    #hambimenu {
         display: block;
     }
 
@@ -296,7 +296,7 @@ li.dropdown {
         display: none;
     }
 
-    .hamburger {
+    #hambimenu {
         display: block;
     }
 

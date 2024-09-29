@@ -20,6 +20,8 @@ class Kozmetikus {
     napok = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];
     honapok = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
 
+    // A constructor paramétereinek megadásával létrehozzuk az új 'dolgozót'. A display úgy lett kialakítva, ha később 
+    // egy vagy több új kozmetikust is hozzáadunk, a megjelenítés szépen rendeződik.
 
     constructor(nev, titulus, bemutatkozas, kepSrc, parent) {
 
@@ -40,6 +42,8 @@ class Kozmetikus {
 
     }
 
+    // ez a metódus építi fel az első lépés felületét.
+
     build() {
 
         this.element = evalTpl(this.tpl);
@@ -59,11 +63,17 @@ class Kozmetikus {
 
     }
 
+    // ez a függvény a bemutatkozó szöveg megjelenitését limitálja le 150 karakterre
+
     bemutatkozasFilter(text) {
 
-        return `${text.substr(0, 150)}...`
+        return `${text.substr(0, 150)}...` 
 
     }
+
+    // ez a metódus a kozmetikusok munkaidejeinek (<options>)-ba való generálását segíti, meg kell adni hogy először, hogy hová
+    // aztán hogy hány darab dátumból, és hogy mely napindexű napokat (azokat a napokat amikor ők dolgoznak a JSONban megírva),
+    // tegye bele a listába.
 
     date(element, dayNum, ...dayIndex) {
 
@@ -88,6 +98,8 @@ class Kozmetikus {
         }
     }
 
+    // ez a sigleSelectért felelős az időpont kiválasztásánál
+
     select() {
 
         const idokpontok = document.querySelector('.foglalas-idopontok');
@@ -109,11 +121,17 @@ class Kozmetikus {
         }))
     }
 
+    // ez felelős magáért a foglalásért, a foglalás gombra kattintva betölti a JSON adatokat, majd előállítja a foglaláshoz
+    // szükséges adatokat és, ha minden ki van töltve az objektumot átküldi az 'update.php' filenak. A php file felelős
+    // azért, hogy az ellenőrzések után beleírjon a JSONbe. Emellett küldünk adatokat az 'idopontfoglalasOOP.php'-nak is 
+    // aki pedig a mySqlbe írja bele a foglalásokat, hogy később onnan az admin felületen meglehessen jeleníteni azokat.
+    // az adatok localStoragebe is rögzitésre kerülnek, de mivel szerveroldalon is meg van irva, talán ez nem is lenne szükséges.
+
     foglalas() {
 
         this.bookBtn.addEventListener('click', async function () {
 
-            let request = await fetch('./db/foglalasok.JSON');
+            let request = await fetch('../db/foglalasok.JSON');
             let myObj = await request.json();
 
             console.log(myObj);
@@ -129,7 +147,10 @@ class Kozmetikus {
             let user = document.querySelector('.foglalas-div').id;
             let date = document.querySelector('#idopont').selectedOptions[0].innerHTML;
 
-            if (guestName && guestPhone && guestTime && user && date) {
+            const nameRegExp = /[A-ZÖÜÓŐÚÉÁŰÍ][a-zöüóőúéáűí]+([-\s]+[A-ZÖÜÓŐÚÉÁŰÍ][a-zöüóőúéáűí]+)+/g;
+            const phoneRegExp = /((\+36)|(06))((1)|(20)|(30)|(70))[0-9]{7}/gm;
+
+            if (nameRegExp.test(guestName) && phoneRegExp.test(guestPhone) && guestTime && user && date) {
 
                 const userObj = {
 
@@ -143,7 +164,7 @@ class Kozmetikus {
 
                 try {
 
-                    const response = await fetch('../update.php', {
+                    const response = await fetch('../phps/update.php', {
 
                         method: 'POST',
                         headers: {
@@ -173,7 +194,7 @@ class Kozmetikus {
                 };
 
                 const xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "../idopontfoglalasOOP.php");
+                xhttp.open("POST", "../phps/idopontfoglalasOOP.php");
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xhttp.onreadystatechange = () => {
 
@@ -206,7 +227,7 @@ class Kozmetikus {
                         document.querySelector('.main').innerHTML = finalTpl;
                         document.querySelector('.maindiv').insertAdjacentElement('afterbegin', img);
                         document.querySelector('.backbutton').addEventListener('click', function () {
-                            window.location.assign('index.php')
+                            window.location.assign('../index.php')
                         })
                         console.log(img);
 
@@ -217,21 +238,20 @@ class Kozmetikus {
                 xhttp.send(`nev=${guestName}&telefonszam=${guestPhone}&idopont=${guestTime}&user=${user}&nap=${date}`);
 
             } else {
-                alert('Minden mező kitöltése kötelező!')
+                alert('Hibás kitöltés!')
             }
 
         })
     }
 
-
-
-
+    // ez a metódus generálja ki az időpontfoglalás második lépését, az azt követő részt miután kiválasztjuk a kivánt fodrászt.
+    // kigenerálja az elérhető időpontokat, amik még szabadok.
 
     async renderTimes(user) {
 
         if (this.element.id === user) {
 
-            let request = await fetch('./db/foglalasok.JSON');
+            let request = await fetch('../db/foglalasok.JSON');
             let myObj = await request.json();
 
             this.foglalasTpl = `<div class="foglalas-div" id='${this.nev}'>

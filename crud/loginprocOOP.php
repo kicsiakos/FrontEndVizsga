@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../config/conf.php');
+require_once('../db/config/conf.php');
 
 
 class LoginprocOOP

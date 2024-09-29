@@ -14,7 +14,7 @@
 
 header {
     width: 100%;
-    background-image: url(../img/hatter.jpg);
+    background-image: url(../images/hatter.jpg);
     background-size: cover;
     display: flex;
     flex-flow: column wrap;

@@ -46,7 +46,7 @@ class IdopontfoglalasOOP
         }
 
         if (mysqli_query($this->conn, $sql)) {
-            header("Location: index.php");
+            header("Location: ../index.php");
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
         }

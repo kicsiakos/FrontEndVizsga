@@ -6,7 +6,7 @@ $userObj = json_decode($jsonData, true);
 
 if ($userObj) {
 
-    $file = './db/foglalasok.JSON';
+    $file = '../db/foglalasok.JSON';
 
     if (file_exists($file) && is_readable($file)) {
 

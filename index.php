@@ -9,7 +9,7 @@ session_start()
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tóth Horti Vanda - Sminktetováló </title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@ session_start()
     <div class="content">
         <header>
             <nav>
-                <?php require_once ('view/nav.php') ?>
+                <?php require_once('./view/nav.php') ?>
             </nav>
             <div class="fejlec">
                 <p class="fejlec-nev">Tóth-Horti Vanda</p>
@@ -63,7 +63,6 @@ session_start()
             <div class="logo"></div>
             <div class="main-content">
                 <p>Köszöntelek az oldalamon!</p>
-
                 <p>Tóth<b>-</b>Horti Vanda vagyok, kozmetikus, sminktetováló és esztéta. Kozmetikai tanulmányaim
                     befejezése után szinte rögtön belevágtam az igazi álmom megvalósításába, és elvégeztem számos
                     sminktetováló és esztéta képzést Magyarországon és külföldön egyaránt. Szerencsém volt a szakma
@@ -72,37 +71,27 @@ session_start()
                     Határozottan úgy gondolom, hogy „jó pap is holtáig tanul” így a mai napig rendszeresen járok
                     különféle előadásokra és tanfolyamokra, fejlesztve önmagam és a tudásom.
                 </p>
-
                 <p>„Tudod ki fog Neked mindent megadni? <b>-</b> Te magad!”</p>
-
                 <p>Azt gondolom nőként és férfiként egyaránt kell időt szánnunk magunkra, szépségünkre és
                     boldogságunkra. Hiszen így képesek leszünk másoknak is átadni saját örömünket. Ha ehhez egy
                     szépészeti beavatkozásra van szükséged, hogy Te elégedett légy a testedben, én boldogan leszek
                     részese, hogy együtt megtervezve kiegészítsük a szépséged.</p>
-
             </div>
 
             <footer>
-
                 <div class="footer-szoveg">
-
                     <p>Várlak sok szeretettel,
                         <br>
                         Vanda <b>-</b> a Te sminktetoválód és esztétád.
                     </p>
-
                 </div>
-
                 <div class="profil">
-
-                    <img src="./img/galeria/vanda.jpg" alt="">
-
+                    <img src="./images/galeria/vanda.jpg" alt="">
                 </div>
-
             </footer>
         </main>
     </div>
-    <script src="./script/main.js" type="module"></script>
+    <script src="./scripts/main.js" type="module"></script>
 </body>
 
 </html>

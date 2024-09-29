@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/interlash.css">
+    <link rel="stylesheet" href="../styles/interlash.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 <body>
     <header>
         <nav>
-            <?php require_once ('view/nav.php') ?>
+            <?php require_once ('../view/nav.php') ?>
         </nav>
         <h2 class="cim">INTERLASH</h2>
         <h4 class="alcim">Szempillasűrítő tetoválás</h4>
@@ -66,7 +66,7 @@
         </p>
 
     </main>
-    <script src="./script/app.js"></script>
+    <script src="../scripts/app.js"></script>
 </body>
 
 </html>

@@ -14,10 +14,6 @@ function getElement(selctorOrElement){
     return el instanceof HTMLElement ? el : null;
 }
 
-function idoP(){
-    
-}
-
 export {
     evalTpl, getElement
 }
